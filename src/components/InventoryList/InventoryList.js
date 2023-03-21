@@ -3,9 +3,11 @@ import './InventoryList.scss'
 
 export const InventoryList = () => {
   return (
-    <body>
+    <div className="page" >
       <div className="inventory__search-container">
-        <h2>Inventory</h2>
+
+        <h2 className="inventory__header" >Inventory</h2>
+        
         <div className="inventory__search-inner-container">
           <input
             className="inventory__search-bar"
@@ -15,6 +17,6 @@ export const InventoryList = () => {
           <button className="inventory__search-button">Add New Item</button>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
