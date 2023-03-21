@@ -1,4 +1,4 @@
-import { Footer } from './components/Header/Footer/Footer';
+import { Footer } from './components/Footer/Footer';
 import { InventoryList } from './components/InventoryList/InventoryList';
 
 function App() {
