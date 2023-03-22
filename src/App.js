@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
+ //import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
+import DeleteInventoryModal from "./components/DeleteInventoryModal/DeleteInventoryModal";
 import "./App.scss";
-import Header from "../src/components/Header/Header";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<InventoryItemDetails />} />
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
         <Route path="/inventory" element={<InventoryList/>} />
+        <Route path="/delete" element={ <DeleteInventoryModal/> }/>
       </Routes>
     </BrowserRouter>
   );
