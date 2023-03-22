@@ -10,7 +10,6 @@ export const InventoryList = () => {
       <div className="page">
         <div className="inventory__search-container">
           <h2 className="inventory__header">Inventory</h2>
-
           <div className="inventory__search-inner-container">
             <input
               className="inventory__search-bar"
@@ -28,7 +27,7 @@ export const InventoryList = () => {
             <p>INVENTORY ITEM</p>
             <div className="inventory__chevron-container">
               <p className="inventory__item-text">Television</p>
-              <img src={arrowIcon}></img>
+              <img src={arrowIcon} alt="chevron arrow icon"></img>
             </div>
           </div>
           <div className="inventory__catagory">
@@ -36,7 +35,7 @@ export const InventoryList = () => {
             <p>Electronics</p>
           </div>
           <div className="inventory__icons">
-            <img src={trashcanIcon}></img>
+            <img src={trashcanIcon} alt="trash can icon"></img>
           </div>
         </div>
 
@@ -49,7 +48,7 @@ export const InventoryList = () => {
           </div>
 
           <div className="inventory__quantities">
-            <p className='inventory__quantity-text'>QTY</p>
+            <p className="inventory__quantity-text">QTY</p>
             <p>500</p>
           </div>
 
@@ -59,7 +58,10 @@ export const InventoryList = () => {
           </div>
 
           <div className="inventory__icons">
-            <img className="inventory__icon-edit" src={editIcon}></img>
+            <img
+              className="inventory__icon-edit"
+              src={editIcon}
+              alt="pencil edit icon"></img>
           </div>
         </div>
       </div>
@@ -83,8 +85,11 @@ export const InventoryList = () => {
           <p>500</p>
           <p>Manhattan</p>
           <span>
-            <img src={trashcanIcon} className="traschcan"></img>
-            <img src={editIcon} className="edit"></img>
+            <img
+              src={trashcanIcon}
+              className="traschcan"
+              alt="trash can icon"></img>
+            <img src={editIcon} className="edit" alt="pencil edit icon"></img>
           </span>
         </div>
       </div>
