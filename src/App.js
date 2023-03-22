@@ -5,6 +5,7 @@ import { InventoryList } from "./components/InventoryList/InventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import "./App.scss";
 import Header from "../src/components/Header/Header";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route path="/" element={<InventoryItemDetails />} />
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
         <Route path="/inventory" element={<InventoryList />} />
+        <Route
+          path="/warehouses/:warehouseId/delete"
+          element={<AddWarehouse />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -4,6 +4,7 @@
 .header {
   background-color: #232940;
   padding: 1.6rem 1.6rem 0.5rem;
+  text-align: center;
   @include tablet {
     display: flex;
     align-items: center;
@@ -11,13 +12,11 @@
   }
 }
 .navigation {
-  margin-right: 1.6rem;
+  text-align: center;
   &__logo {
-    margin-left: 5rem;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
     height: 1.056rem;
     width: 5.613rem;
+    margin-bottom: 1rem;
     @include tablet {
       margin-right: 15rem;
       @include desktop {

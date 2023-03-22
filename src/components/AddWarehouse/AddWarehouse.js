@@ -1,3 +1,5 @@
+import "./AddWarehouse.scss";
+
 function AddWarehouse() {
   return (
     <div className="add-warehouse__component">
@@ -12,7 +14,7 @@ function AddWarehouse() {
       <div className="add-warehouse__main-content">
         {/* ////LEFT SIDE//// */}
         <div className="add-warehouse__left-side">
-          <h2>Warehouse Details</h2>
+          <h3 className="add-warehouse__header">Warehouse Details</h3>
           <form className="warehouse-form">
             <label className="warehouse-form__label">Warehouse Name</label>
             <input
@@ -34,8 +36,8 @@ function AddWarehouse() {
           </form>
         </div>
         {/* ///RIGHT SIDE//// */}
-        <div className="item-details__right-side">
-          <h2>Contact Details</h2>
+        <div className="add-warehouse__right-side">
+          <h3 className="add-warehouse__header">Contact Details</h3>
           <form className="warehouse-form">
             <label className="warehouse-form__label">Contact Name</label>
             <input
@@ -47,13 +49,16 @@ function AddWarehouse() {
               className="warehouse-form__input"
               placeholder="Position"
             ></input>
-            <label className="warehouse-form__label">City</label>
+            <label className="warehouse-form__label">Phone Number</label>
             <input
               className="warehouse-form__input"
               placeholder="Phone Number"
             ></input>
-            <label className="warehouse-form__label">Phone Number</label>
-            <input className="warehouse-form__input" placeholder=""></input>
+            <label className="warehouse-form__label">Email</label>
+            <input
+              className="warehouse-form__input"
+              placeholder="Email"
+            ></input>
           </form>
         </div>
       </div>
@@ -61,4 +66,4 @@ function AddWarehouse() {
   );
 }
 
-export default InventoryItemDetails;
+export default AddWarehouse;
