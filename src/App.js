@@ -9,7 +9,7 @@ import "./App.scss";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         {/* TODO change element to reflect home page */}
         <Route path="/" element={<InventoryItemDetails />} />
