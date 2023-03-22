@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="header">
       <img className="navigation__logo" src={inStockLogo} alt="instock-logo" />
-      <nav class="navigation">
+      <nav className="navigation">
         <div>
           <ul className="navigation__list">
             <div className="navigation__item-wrapper">
