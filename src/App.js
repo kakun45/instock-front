@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
-import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
-import "./App.scss";
-import WarehouseItem from "./components/WarehouseItem/WarehouseItem";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
+import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
+import DeleteInventoryModal from "./components/DeleteInventoryModal/DeleteInventoryModal";
+import "./App.scss";
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         {/* TODO change element to reflect home page */}
         <Route path="/" element={<InventoryItemDetails />} />
         <Route path="/warehouses" element={<WarehouseList />} />
-        <Route path="/warehouses/:warehouseId" element={<WarehouseItem />} />
+        {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
+        <Route path="/warehouses/:warehouseId" element={<WarehouseDetails />} />
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
         <Route path="/inventory" element={<InventoryList />} />
+        <Route path="/delete" element={<DeleteInventoryModal />} />
       </Routes>
       <Footer />
     </BrowserRouter>
