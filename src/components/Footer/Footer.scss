@@ -1,0 +1,23 @@
+
+.footer{
+
+&__main-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+&____container{
+  width: 100%;
+  height: 6rem;
+  background-color: #D1D1D1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+&__copyright-text {
+  color: #5C667E;
+  font-size: .75rem;
+}
+
+}
