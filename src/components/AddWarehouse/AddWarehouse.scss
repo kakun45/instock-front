@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.item-details {
+  &add-warehouse__component {
+    background-color: $primary-light-color;
+    margin: 0 $m-margin-page-lateral;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+
+    @include tablet {
+      margin: 0 $t-margin-page-lateral;
+    }
+
+    @include desktop {
+      width: $d-content-width;
+      margin: auto;
+    }
+  }
+
+  &__main-content {
+    padding: 1.5rem;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__left-side {
+    @include tablet {
+      flex: 1;
+    }
+  }
+
+  &__right-side {
+    @include tablet {
+      flex: 1;
+      padding-left: $t-margin-page-lateral;
+      border-left: 0.063rem solid $secondary-light-color;
+    }
+  }
+}
