@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import "./App.scss";
+import Header from "../src/components/Header/Header";
 
 function App() {
   return (
