@@ -1,0 +1,98 @@
+
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/variables" as *;
+
+.delete-modal{
+&__container{
+    width: 30rem;
+    height: 42rem;
+    border: .01rem solid black;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 1rem;
+
+      @include tablet{
+    margin-top: 8rem;
+       width: 55rem;
+      height: 20rem;
+
+    //   align-content: center;
+    //   justify-content: center;
+    //   border: none;
+    }
+}
+
+&__X-container{
+  align-self: flex-end;
+}
+
+&__X{
+font-size: 1.5rem;
+}
+
+&__header{
+    font-size: 2rem;
+    @include tablet{
+        margin-left: 2rem;
+        font-size: 2.5rem;
+    }
+}
+
+
+&__confrim-text{
+
+    @include tablet{
+    width: 55ch;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    }
+}
+
+&__button-container{
+    // width: 100%;
+    margin-top: 30rem;
+    display: flex;
+    justify-content: space-around;
+
+       @include tablet{
+        margin-top: 4rem;
+        margin-right: 2rem;
+        justify-content: center;
+        align-self: flex-end;
+
+    }
+
+
+}
+
+&__cancel-button{
+width: 16rem;
+height: 2.75rem;
+border-radius: 20px;
+border: none;
+
+
+   @include tablet{
+      width: 6rem;
+    }
+
+}
+
+&__delete-button{
+width: 16rem;
+height: 2.75rem;
+border-radius: 20px;
+background-color: $accent-negative-color;
+border: none;
+color: white;
+
+
+  @include tablet{
+      width: 6rem;
+    }
+}
+
+}
