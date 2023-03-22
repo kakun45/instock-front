@@ -38,7 +38,7 @@ export const InventoryList = () => {
         <div className="inventory__status-container">
           <div className="inventory__status">
             <p>Status</p>
-            <p>In Stock</p>
+            <p>IN STOCK</p>
           </div>
 
           <div className="inventory__quantities">
@@ -56,15 +56,16 @@ export const InventoryList = () => {
           </div>
         </div>
       </div>
+
       <div className="inventory__product-container">
         <div className="inventory__item-container">
           <div className="inventory__items">
             <p>inventory item</p>
-            <p>Television</p>
+            <p>Gym Bag</p>
           </div>
           <div className="inventory__catagory">
             <p>category</p>
-            <p>Electronics</p>
+            <p>Gear</p>
           </div>
           <div className="inventory__icons">
             <p>Trash Icon</p>
@@ -74,12 +75,12 @@ export const InventoryList = () => {
         <div className="inventory__status-container">
           <div className="inventory__status">
             <p>Status</p>
-            <p>In Stock</p>
+            <p>OUT OF STOCK</p>
           </div>
 
           <div className="inventory__quantities">
             <p>QTY</p>
-            <p>500</p>
+            <p>0</p>
           </div>
 
           <div className="inventory__warehouses">
@@ -92,40 +93,33 @@ export const InventoryList = () => {
           </div>
         </div>
       </div>
-      <div className="inventory__product-container">
-        <div className="inventory__item-container">
-          <div className="inventory__items">
-            <p>inventory item</p>
-            <p>Television</p>
-          </div>
-          <div className="inventory__catagory">
-            <p>category</p>
-            <p>Electronics</p>
-          </div>
-          <div className="inventory__icons">
-            <p>Trash Icon</p>
-          </div>
+
+      <div className="inventory__product-container--tablet">
+        <div className="inventory__table-headers">
+          <p>Inventory Item</p>
+          <p>category</p>
+          <p>Status</p>
+          <p>Qty</p>
+          <p>Warehouse</p>
+          <p>Actions</p>
         </div>
 
-        <div className="inventory__status-container">
-          <div className="inventory__status">
-            <p>Status</p>
-            <p>In Stock</p>
-          </div>
+        <div className="inventory__item-container--tablet">
+          <p>Television</p>
+          <p>Electronics</p>
+          <p>IN STOCK</p>
+          <p>500</p>
+          <p>Manhattan</p>
+          <p>Icon</p>
+        </div>
 
-          <div className="inventory__quantities">
-            <p>QTY</p>
-            <p>500</p>
-          </div>
-
-          <div className="inventory__warehouses">
-            <p>Warehouse</p>
-            <p>Manhattan</p>
-          </div>
-
-          <div className="inventory__icons">
-            <p>Edit Icon</p>
-          </div>
+        <div className="inventory__item-container--tablet">
+          <p>Gym Bag</p>
+          <p>Gear</p>
+          <p>OOUT OF STOCK</p>
+          <p>0</p>
+          <p>Manhattan</p>
+          <p>Icon</p>
         </div>
       </div>
     </>
