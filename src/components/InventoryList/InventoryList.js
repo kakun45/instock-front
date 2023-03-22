@@ -1,6 +1,7 @@
 import React from 'react'
 import './InventoryList.scss'
-// import trashcan from '../../assets/icons/delete_outline-24px.svg'
+import  trashcanIcon  from '../../assets/icons/delete_outline-24px.svg';
+import editIcon from "../../assets/icons/edit-24px.svg";
 
 export const InventoryList = () => {
   return (
@@ -31,7 +32,7 @@ export const InventoryList = () => {
             <p>Electronics</p>
           </div>
           <div className="inventory__icons">
-            <p>Trash Icon</p>
+            <img src={trashcanIcon}></img>
           </div>
         </div>
 
@@ -52,7 +53,7 @@ export const InventoryList = () => {
           </div>
 
           <div className="inventory__icons">
-            <p>Edit Icon</p>
+            <img src={editIcon}></img>
           </div>
         </div>
       </div>
@@ -122,6 +123,7 @@ export const InventoryList = () => {
           <p>Icon</p>
         </div>
       </div>
+     
     </>
   );
 }
