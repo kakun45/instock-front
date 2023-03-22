@@ -1,16 +1,14 @@
+import Button from "../Button/Button";
+import NavHeader from "../NavHeader/NavHeader";
+
 import "./AddWarehouse.scss";
 
 function AddWarehouse() {
   return (
     <div className="add-warehouse__component">
-      {/* <NavHeader path="/addwarehouse">
-          <Button
-            icon={editIcon}
-            text="EDIT"
-            emphasis="high-emphasis"
-            type="button"
-          />
-        </NavHeader> */}
+      <NavHeader title="Add New Warehouse" path="/warehouses">
+        <></>
+      </NavHeader>
       <div className="add-warehouse__main-content">
         {/* ////LEFT SIDE//// */}
         <div className="add-warehouse__left-side">
@@ -60,6 +58,11 @@ function AddWarehouse() {
               placeholder="Email"
             ></input>
           </form>
+          <div className="button-wrapper">
+            <Button text="EDIT" emphasis="high-emphasis" type="button" />
+
+            <Button text="EDIT" emphasis="high-emphasis" type="button" />
+          </div>
         </div>
       </div>
     </div>

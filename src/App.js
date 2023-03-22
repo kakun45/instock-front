@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Header from "./components/Header/Header";
+
 import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import "./App.scss";
-import Header from "../src/components/Header/Header";
+import Header from "./components/Header/Header";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 
 function App() {
