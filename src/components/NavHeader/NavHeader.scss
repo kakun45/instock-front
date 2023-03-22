@@ -18,13 +18,14 @@
   }
 
   &__back-icon {
-    margin-right: 1.5rem;
+    margin-right: 0.75rem;
     cursor: pointer;
   }
 
   &__page-header {
     @include m-page-header($primary-dark-color);
     margin: 0;
+    word-break: break-word;
 
     @include tablet {
       @include t-page-header($primary-dark-color);

@@ -1,4 +1,4 @@
-import editIcon from "../../assets/icons/edit-24px.svg";
+import editIcon from "../../assets/icons/edit-24px.png";
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import "./InventoryItemDetails.scss";
@@ -7,7 +7,12 @@ function InventoryItemDetails() {
   return (
     <div className="item-details__component">
       <NavHeader path="/inventory">
-        <Button icon={editIcon} />
+        <Button
+          icon={editIcon}
+          text="EDIT"
+          emphasis="high-emphasis"
+          type="button"
+        />
       </NavHeader>
       <div className="item-details__main-content">
         <div className="item-details__left-side">
