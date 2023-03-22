@@ -2,6 +2,7 @@ import React from 'react'
 import './InventoryList.scss'
 import  trashcanIcon  from '../../assets/icons/delete_outline-24px.svg';
 import editIcon from "../../assets/icons/edit-24px.svg";
+import arrowIcon from '../../assets/icons/chevron_right-24px.svg';
 
 export const InventoryList = () => {
   return (
@@ -16,7 +17,7 @@ export const InventoryList = () => {
               type="text"
               placeholder="Search..."
             />
-            <button className="inventory__search-button">Add New Item</button>
+            <button className="inventory__search-button">+ Add New Item</button>
           </div>
         </div>
       </div>
@@ -25,7 +26,10 @@ export const InventoryList = () => {
         <div className="inventory__item-container">
           <div className="inventory__items">
             <p>inventory item</p>
-            <p>Television</p>
+            <div className='inventory__chevron-container'>
+              <p>Television</p>
+              <img src={arrowIcon}></img>
+            </div>
           </div>
           <div className="inventory__catagory">
             <p>category</p>
@@ -69,7 +73,7 @@ export const InventoryList = () => {
             <p>Gear</p>
           </div>
           <div className="inventory__icons">
-            <p>Trash Icon</p>
+            <img src={trashcanIcon}></img>
           </div>
         </div>
 
@@ -90,7 +94,7 @@ export const InventoryList = () => {
           </div>
 
           <div className="inventory__icons">
-            <p>Edit Icon</p>
+            <img src={editIcon}></img>
           </div>
         </div>
       </div>
@@ -111,7 +115,10 @@ export const InventoryList = () => {
           <p>IN STOCK</p>
           <p>500</p>
           <p>Manhattan</p>
-          <p>Icon</p>
+          <span>
+            <img src={trashcanIcon}></img>
+            <img src={editIcon}></img>
+          </span>
         </div>
 
         <div className="inventory__item-container--tablet">
@@ -120,10 +127,12 @@ export const InventoryList = () => {
           <p>OOUT OF STOCK</p>
           <p>0</p>
           <p>Manhattan</p>
-          <p>Icon</p>
+          <span>
+            <img src={trashcanIcon}></img>
+            <img src={editIcon}></img>
+          </span>
         </div>
       </div>
-     
     </>
   );
 }

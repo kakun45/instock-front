@@ -1,6 +1,7 @@
 /** @format */
 @use '../../styles/partials/mixins';
 @use '../../styles/partials/variables';
+$searchIcon : url("../../assets/icons/search-24px.svg");
 
 .page {
   //border: 0.01rem solid black;
@@ -15,7 +16,7 @@
 .inventory {
   &__search-container {
     margin-top: 1rem;
-    width: 95%;
+    width: 100%;
     height: fit-content;
     background-color: white;
     display: flex;
@@ -27,7 +28,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
+      width: 95%;
       padding-bottom: 1rem;
       border: none;
     }
@@ -35,8 +36,9 @@
 
   &__header {
     align-self: flex-start;
-    margin-left: 1rem;
+    margin-left: 3rem;
     margin-bottom: 1rem;
+    font-size: 1.75rem;
 
     @media (min-width: 768px) {
       margin: auto 1rem;
@@ -62,11 +64,15 @@
   }
 
   &__search-bar {
-    width: 18.5rem;
+    width: 25.5rem;
     border-radius: 20px;
     height: 1.5rem;
     font-size: 0.75rem;
     padding-left: 1rem;
+    background-image: $searchIcon;
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    border: #BDC5D5;
 
     @media (min-width: 768px) {
       width: 8rem;
@@ -74,13 +80,14 @@
   }
 
   &__search-button {
-    width: 20rem;
+    width: 25rem;
     border-radius: 20px;
     margin-top: 1rem;
     height: 2rem;
     margin-bottom: 1rem;
     background-color: #2e66e6;
     color: white;
+    border: none;
     @media (min-width: 768px) {
       margin-top: 0;
       margin-bottom: 0rem;
@@ -89,12 +96,13 @@
   }
 
   &__product-container {
-    width: 95%;
+    width: 100%;
     height: 12rem;
     border-bottom: 0.01rem solid black;
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    padding-left: 2rem;
 
         @media (min-width: 768px) {
         display: none;
@@ -125,7 +133,7 @@
 &__product-container--tablet{
     display: none;
  @media (min-width: 768px){
-    width: 100%;
+    width: 90%;
     height: 3rem;
     display: inline-block;
     margin-top: 1rem;
@@ -134,6 +142,8 @@
 
 &__table-headers{
     @media (min-width: 768px){
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1rem;
@@ -141,6 +151,15 @@
 
 }
 
+&__items{
+    display: flex;
+    flex-direction: column;
+}
+}
+
+
+&__chevron-container{
+    display: flex;
 }
 
 &__item-container--tablet{
@@ -150,6 +169,8 @@
     justify-content: space-evenly;
     border-bottom: .01rem solid black;
     padding: 1rem 0;
+    width: 95%;
+    margin: 0 auto;
 
 }
 }
