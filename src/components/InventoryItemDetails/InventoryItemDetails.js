@@ -6,7 +6,7 @@ import "./InventoryItemDetails.scss";
 function InventoryItemDetails() {
   return (
     <div className="item-details__component">
-      <NavHeader path="/inventory">
+      <NavHeader title={"Television Here"} path="/inventory">
         <Button
           icon={editIcon}
           text="EDIT"
