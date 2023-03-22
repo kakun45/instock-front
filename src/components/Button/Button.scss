@@ -1,0 +1,53 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-button {
+}
+
+.default-button {
+  background-color: $primary-light-color;
+  width: 1rem;
+  padding: 0.625rem;
+  border-radius: 50%;
+  margin-left: 1.75rem;
+  cursor: pointer;
+
+  //   @include tablet {
+  //     @include t-button($primary-light-color);
+  //     width: 9.375rem;
+  //     margin: 0;
+  //   }
+
+  //   &--high-emphasis {
+  //     @include m-button($primary-light-color);
+  //     background-color: $primary-key-color;
+
+  //     &:hover {
+  //       background-color: $secondary-key-color;
+  //     }
+
+  //     @include tablet {
+  //       @include t-button($primary-light-color);
+  //     }
+  //   }
+
+  //   &--low-emphasis {
+  //     @include m-button($primary-key-color);
+  //     background-color: $primary-light-color;
+
+  //     &:hover {
+  //       background-color: $secondary-light-color;
+  //     }
+
+  //     @include tablet {
+  //       @include t-button($primary-key-color);
+  //     }
+  //   }
+
+  //   &__icon {
+  //     position: absolute;
+  //     left: 1rem;
+  //     width: 1rem;
+  //     margin-right: $m-margin-between-components;
+  //   }
+}
