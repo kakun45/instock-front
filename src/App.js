@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-// import { Footer } from "./components/Footer/Footer";
+ //import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import DeleteInventoryModal from "./components/DeleteInventoryModal/DeleteInventoryModal";
