@@ -14,6 +14,7 @@ function App() {
         {/* TODO change element to reflect home page */}
         <Route path="/" element={<InventoryItemDetails />} />
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
+        <Route path="/inventory" element={<InventoryList/>} />
       </Routes>
     </BrowserRouter>
   );
