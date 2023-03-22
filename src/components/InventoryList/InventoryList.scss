@@ -80,7 +80,7 @@ $searchIcon : url("../../assets/icons/search-24px.svg");
   }
 
   &__search-button {
-    width: 25.5rem;
+    width: 26rem;
     border-radius: 20px;
     margin-top: 1rem;
     height: 2rem;
@@ -97,11 +97,10 @@ $searchIcon : url("../../assets/icons/search-24px.svg");
 
   &__product-container {
     width: 100%;
-    height: 12rem;
+    height: 15rem;
     border-bottom: 0.01rem solid #BDC5D5;
      border-top: 0.01rem solid #BDC5D5;
     display: flex;
-    justify-content: center;
     margin: 0 auto;
     padding-left: 2rem;
 
@@ -112,7 +111,7 @@ $searchIcon : url("../../assets/icons/search-24px.svg");
 
   &__item-container {
     width: 50%;
-    height: 12rem;
+    height: 14rem;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -122,7 +121,7 @@ $searchIcon : url("../../assets/icons/search-24px.svg");
 
   &__status-container {
     width: 50%;
-    height: 12rem;
+    height: 14rem;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -158,8 +157,20 @@ $searchIcon : url("../../assets/icons/search-24px.svg");
 }
 }
 
-// &__icons{
+&__icon-edit{
+}
+
+&__item-text{
+    color: blue;
+}
+
+// &__catagory{
 // }
+
+// &__quantity-text{
+//     margin-top: 2.5rem;
+// }
+
 
 &__chevron-container{
     display: flex;

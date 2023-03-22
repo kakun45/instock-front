@@ -25,14 +25,14 @@ export const InventoryList = () => {
       <div className="inventory__product-container">
         <div className="inventory__item-container">
           <div className="inventory__items">
-            <p>inventory item</p>
+            <p>INVENTORY ITEM</p>
             <div className="inventory__chevron-container">
-              <p>Television</p>
+              <p className="inventory__item-text">Television</p>
               <img src={arrowIcon}></img>
             </div>
           </div>
           <div className="inventory__catagory">
-            <p>category</p>
+            <p>CATAGORY</p>
             <p>Electronics</p>
           </div>
           <div className="inventory__icons">
@@ -43,65 +43,23 @@ export const InventoryList = () => {
         <div className="inventory__status-container">
           <div className="inventory__status">
             <div className="inventory__status-active-container">
-              <p>Status</p>
+              <p>STATUS</p>
             </div>
             <p>IN STOCK</p>
           </div>
 
           <div className="inventory__quantities">
-            <p>QTY</p>
+            <p className='inventory__quantity-text'>QTY</p>
             <p>500</p>
           </div>
 
           <div className="inventory__warehouses">
-            <p>Warehouse</p>
+            <p>WAREHOUSE</p>
             <p>Manhattan</p>
           </div>
 
           <div className="inventory__icons">
-            <img src={editIcon}></img>
-          </div>
-        </div>
-      </div>
-
-      <div className="inventory__product-container">
-        <div className="inventory__item-container">
-          <div className="inventory__items">
-            <p>inventory item</p>
-            <div className="inventory__chevron-container">
-              <p>Gym Bag</p>
-              <img src={arrowIcon}></img>
-            </div>
-          </div>
-          <div className="inventory__catagory">
-            <p>category</p>
-            <p>Gear</p>
-          </div>
-          <div className="inventory__icons">
-            <img src={trashcanIcon}></img>
-          </div>
-        </div>
-
-        <div className="inventory__status-container">
-          <div className="inventory__status">
-            <div className="inventory__status-active-container">
-              <p>Status</p>
-            </div>
-            <p>OUT OF STOCK</p>
-          </div>
-
-          <div className="inventory__quantities">
-            <p>QTY</p>
-            <p>0</p>
-          </div>
-
-          <div className="inventory__warehouses">
-            <p>Warehouse</p>
-            <p>Manhattan</p>
-          </div>
-
-          <div className="inventory__icons">
-            <img src={editIcon}></img>
+            <img className="inventory__icon-edit" src={editIcon}></img>
           </div>
         </div>
       </div>
@@ -127,20 +85,6 @@ export const InventoryList = () => {
           <span>
             <img src={trashcanIcon} className="traschcan"></img>
             <img src={editIcon} className="edit"></img>
-          </span>
-        </div>
-
-        <div className="inventory__item-container--tablet">
-          <p>Gym Bag</p>
-          <p>Gear</p>
-          <div className="inventory__status-active-container">
-            <p>OUT OF STOCK</p>
-          </div>
-          <p>0</p>
-          <p>Manhattan</p>
-          <span className='inventory__icons'>
-            <img src={trashcanIcon}></img>
-            <img src={editIcon}></img>
           </span>
         </div>
       </div>
