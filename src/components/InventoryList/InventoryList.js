@@ -3,8 +3,23 @@ import './InventoryList.scss'
 import  trashcanIcon  from '../../assets/icons/delete_outline-24px.svg';
 import editIcon from "../../assets/icons/edit-24px.svg";
 import arrowIcon from '../../assets/icons/chevron_right-24px.svg';
+ import arrowDrop from '../../assets/icons/sort-24px.svg';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export const InventoryList = () => {
+
+const { inventoryId } = useParams()
+
+const [ inventoryList, setInventoryList] = ([])
+
+useEffect( () => {
+
+axios.get(`http://localhost:8080//api/inventories/`).then( (res) => setInventoryList(res.data) )
+
+}, [inventoryId] )
+
   return (
     <>
       <div className="page">
@@ -68,16 +83,31 @@ export const InventoryList = () => {
 
       <div className="inventory__product-container--tablet">
         <div className="inventory__table-headers">
-          <p>Inventory Item</p>
-          <p>category</p>
-          <p>Status</p>
-          <p>Qty</p>
-          <p>Warehouse</p>
-          <p>Actions</p>
+          <div className="inventory__sort-icon">
+            <p>INVENTORY ITEMS</p> <img src={arrowDrop}></img>
+          </div>
+          <div className="inventory__sort-icon">
+            <p>CATAGORY</p> <img src={arrowDrop}></img>
+          </div>
+          <div className="inventory__sort-icon">
+            <p>STATUS</p> <img src={arrowDrop}></img>
+          </div>
+          <div className="inventory__sort-icon">
+            <p>QTY</p> <img src={arrowDrop}></img>
+          </div>
+          <div className="inventory__sort-icon">
+            <p>WAREHOUSE</p> <img src={arrowDrop}></img>
+          </div>
+          <div className="inventory__sort-icon">
+            <p>ACTIONS</p> <img src={arrowDrop}></img>
+          </div>
         </div>
 
         <div className="inventory__item-container--tablet">
-          <p>Television</p>
+          <div className="inventory__chevron-container">
+            <p className="inventory__item-text">Television</p>
+            <img src={arrowIcon} alt="chevron arrow icon"></img>
+          </div>
           <p>Electronics</p>
           <div className="inventory__status-active-container">
             <p>IN STOCK</p>
