@@ -19,7 +19,6 @@ export const InventoryList = () => {
       .get(`${API_URI}/api/inventories`)
       .then((res) => {
         setInventoryList(res.data);
-        console.log(res.data);
       })
 
       .catch((err) => console.log(err));

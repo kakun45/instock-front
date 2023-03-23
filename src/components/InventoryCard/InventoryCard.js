@@ -35,7 +35,10 @@ export const InventoryCard = ({ item }) => {
             <p>{`${category}`}</p>
           </div>
           <div className="inventory__icons">
-            <img src={trashcanIcon} alt="trash can icon"></img>
+            <img
+              className="inventory__icons-trash"
+              src={trashcanIcon}
+              alt="trash can icon"></img>
           </div>
         </div>
 
@@ -78,10 +81,12 @@ export const InventoryCard = ({ item }) => {
           <img src={arrowIcon} alt="chevron arrow icon"></img>
         </div>
         <p>{`${category}`}</p>
-        <div >
+        <div>
           <p
             className={
-              status === "Out of Stock" ? "out_stock  inventory__status-active-container" : "inventory__status-text inventory__status-active-container"
+              status === "Out of Stock"
+                ? "out_stock  inventory__status-active-container"
+                : "inventory__status-text inventory__status-active-container"
             }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
@@ -89,9 +94,12 @@ export const InventoryCard = ({ item }) => {
         <span>
           <img
             src={trashcanIcon}
-            className="traschcan"
+            className="inventory__icons-trash"
             alt="trash can icon"></img>
-          <img src={editIcon} className="edit" alt="pencil edit icon"></img>
+          <img
+            src={editIcon}
+            className="inventory_icons-edit"
+            alt="pencil edit icon"></img>
         </span>
       </div>
     </>
