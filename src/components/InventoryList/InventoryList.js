@@ -27,26 +27,25 @@ export const InventoryList = () => {
 
   return (
     <>
-    <SearchBar />
       <div className="inventory__product-container--tablet">
         <div className="inventory__table-headers">
           <div className="inventory__sort-icon">
-            <p>INVENTORY ITEMS</p> <img src={arrowDrop}></img>
+            <p>INVENTORY ITEMS</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>CATEGORY</p> <img src={arrowDrop}></img>
+            <p>CATEGORY</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>STATUS</p> <img src={arrowDrop}></img>
+            <p>STATUS</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>QTY</p> <img src={arrowDrop}></img>
+            <p>QTY</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>WAREHOUSE</p> <img src={arrowDrop}></img>
+            <p>WAREHOUSE</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>ACTIONS</p> <img src={arrowDrop}></img>
+            <p>ACTIONS</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
         </div>
       </div>

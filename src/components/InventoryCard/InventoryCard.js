@@ -78,10 +78,10 @@ export const InventoryCard = ({ item }) => {
           <img src={arrowIcon} alt="chevron arrow icon"></img>
         </div>
         <p>{`${category}`}</p>
-        <div className="inventory__status-active-container">
+        <div >
           <p
             className={
-              status === "Out of Stock" ? "out_stock" : "inventory__status-text"
+              status === "Out of Stock" ? "out_stock  inventory__status-active-container" : "inventory__status-text inventory__status-active-container"
             }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>

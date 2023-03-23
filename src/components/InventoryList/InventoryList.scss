@@ -193,13 +193,12 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     justify-content: center;
 
     @media (min-width: 768px) {
-      width: 6rem;
+      width: 5rem;
     }
   }
 
-  &__status-text {
-    padding: 0 1rem;
-  }
+//   &__status-text {
+//   }
 
   &__item-container--tablet {
     display: none;
