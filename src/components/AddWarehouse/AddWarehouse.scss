@@ -25,7 +25,6 @@
 
     @include tablet {
       display: flex;
-      align-items: center;
     }
   }
 
@@ -37,6 +36,10 @@
     padding-bottom: 2rem;
     @include tablet {
       flex: 1;
+      padding-right: 2rem;
+      margin-top: 0;
+      border-bottom: none;
+      border-top: none;
     }
   }
 
@@ -45,6 +48,7 @@
       flex: 1;
       padding-left: $t-margin-page-lateral;
       border-left: 0.063rem solid $secondary-light-color;
+      margin-top: 1rem;
     }
   }
 }
@@ -69,4 +73,11 @@
 }
 .button-wrapper {
   display: flex;
+  margin-top: 2rem;
+  @include tablet {
+    margin-left: 8.5rem;
+  }
+  @include desktop {
+    margin-left: 18.5rem;
+  }
 }
