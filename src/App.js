@@ -18,10 +18,7 @@ function App() {
         <Route path="/" element={<InventoryItemDetails />} />
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
         <Route path="/inventory" element={<InventoryList />} />
-        <Route
-          path="/warehouses/:warehouseId/delete"
-          element={<AddWarehouse />}
-        />
+        <Route path="/warehouses/:warehouseId/add" element={<AddWarehouse />} />
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
         <Route path="/warehouse/:warehouseId" element={<WarehouseDetails />} />
         <Route path="/delete" element={<DeleteInventoryModal />} />
