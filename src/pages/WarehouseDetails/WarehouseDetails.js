@@ -1,38 +1,35 @@
-// import axios from "axios";
-// import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import "./WarehouseDetails.scss";
-// import { InventoryList } from "../../components/InventoryList/InventoryList";
 import icon from "../../assets/icons/edit-24px.png";
 import Button from "../../components/Button/Button";
 import NavHeader from "../../components/NavHeader/NavHeader";
-import Header from "../../components/Header/Header";
 import { InventoryList } from "../../components/InventoryList/InventoryList";
 import { useParams } from "react-router-dom";
 const API_URI = process.env.REACT_APP_API_URI;
 
 const WarehouseDetails = () => {
-  const { wHouseId } = useParams();
-  // const [???, set???] = useState(???);
+  const { warehouseId } = useParams();
+  const [warehouseObj, setwarehouseObj] = useState({});
 
-  // axios.get(`${API_URI}/????`)
-  // .then((res) => {
-  // get request => get title out of axios res:
-  //  need to create the endpoint for this req first
-  //   set???(res.data);
-  //   title = ???
-  // })
-  // .catch((err) => console.error(err));
+  useEffect(() => {
+    //try GET http://localhost:8080/api/warehouses/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9
+    axios
+      .get(`${API_URI}/api/warehouses/${warehouseId}`)
+      .then((res) => {
+        setwarehouseObj(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, [warehouseId]);
   const handleOnClick = () => {};
 
   return (
     <div>
-      <Header />
       <NavHeader
-      // title={title} // get it out from a res
-      // path="/warehouses" // needs a page
-      >
+        title={warehouseObj.warehouse_name} // get it out from a res in State
+        path="/warehouses">
         <Button
-          // TODO for mobile text={? text hide : "edit"}
+          // TODO text={window.screen.width < 768 ? "" : "Edit"}, if mobile hide the text
           icon={icon}
           emphasis={"high-emphasis"}
           type={"button"}
