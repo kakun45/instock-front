@@ -6,7 +6,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
-import WarehouseList from "./components/InventoryItemDetails/InventoryItemDetails";
+import WarehouseList from "./components/WarehouseList/WarehouseList";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 
 function App() {
