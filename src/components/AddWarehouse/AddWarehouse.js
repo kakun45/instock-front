@@ -59,9 +59,13 @@ function AddWarehouse() {
             ></input>
           </form>
           <div className="button-wrapper">
-            <Button text="EDIT" emphasis="high-emphasis" type="button" />
+            <Button text="Cancel" emphasis="low-emphasis" type="button" />
 
-            <Button text="EDIT" emphasis="high-emphasis" type="button" />
+            <Button
+              text="Add Warehouse"
+              emphasis="high-emphasis"
+              type="button"
+            />
           </div>
         </div>
       </div>
