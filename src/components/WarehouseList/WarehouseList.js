@@ -11,7 +11,13 @@ function WarehouseList({ warehouseList }) {
   ];
 
   return (
-    <div>
+    <div className="warehouse-list__component">
+      <div className="warehouse-list__table-row warehouse-list__table-row--t-show">
+        <h4 className="warehouse-item__table-header">WAREHOUSE</h4>
+        <h4 className="warehouse-item__table-header">ADDRESS</h4>
+        <h4 className="warehouse-item__table-header">CONTACT NAME</h4>
+        <h4 className="warehouse-item__table-header">CONTACT INFORMATION</h4>
+      </div>
       {warehouseList2 && warehouseList2.map((warehouse) => <WarehouseItem />)}
     </div>
   );

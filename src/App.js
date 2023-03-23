@@ -5,7 +5,8 @@ import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
-import DeleteInventoryModal from "./components/DeleteInventoryModal/DeleteInventoryModal";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
 import "./App.scss";
 
 function App() {
@@ -20,7 +21,9 @@ function App() {
         <Route path="/warehouses/:warehouseId" element={<WarehouseDetails />} />
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
         <Route path="/inventory" element={<InventoryList />} />
-        <Route path="/delete" element={<DeleteInventoryModal />} />
+        <Route path="/warehouses/:warehouseId/add" element={<AddWarehouse />} />
+        {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
+        <Route path="/delete" element={<DeleteModal />} />
       </Routes>
       <Footer />
     </BrowserRouter>

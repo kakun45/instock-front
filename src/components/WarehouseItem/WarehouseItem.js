@@ -8,30 +8,30 @@ import "./WarehouseItem.scss";
 import axios from "axios";
 
 function WarehouseItem() {
-  const [item, setItem] = useState();
+  const [warehouse, setWarehouse] = useState();
   const { itemId } = useParams();
 
   useEffect(() => {
     axios
       .get(`http://localhost:8080/api/${itemId}`)
       .then((res) => {
-        setItem(res.data);
+        setWarehouse(res.data);
       })
       .catch((err) => console.log(err));
-  }, [itemId]);
+  }, []);
 
   return (
     <div className="warehouse-item__component">
       <div className="warehouse-item__left-side">
         <div className="warehouse-item__text-box">
-          <h4 className="warehouse-item__table-header warehouse-item__table-header--top">
+          <h4 className="warehouse-item__table-header warehouse-item__table-header--t-hidden">
             WAREHOUSE
           </h4>
           <Link
             to={`/warehouses/${itemId}`}
             className="warehouse-item__link-box"
           >
-            <p className="warehouse-item__link-text">{"item.location"}</p>
+            <p className="warehouse-item__link-text">{"warehouse.location"}</p>
             <img
               className="warehouse-item__link-icon"
               src={chevronIcon}
@@ -40,21 +40,21 @@ function WarehouseItem() {
           </Link>
         </div>
         <div className="warehouse-item__text-box">
-          <h4 className="warehouse-item__table-header  warehouse-item__table-header--after">
+          <h4 className="warehouse-item__table-header  warehouse-item__table-header--t-hidden">
             ADDRESS
           </h4>
-          <p className="warehouse-item__body-medium">{"item.address"}</p>
+          <p className="warehouse-item__body-medium">{"warehouse.address"}</p>
         </div>
       </div>
       <div className="warehouse-item__right-side">
         <div className="warehouse-item__text-box">
-          <h4 className="warehouse-item__table-header warehouse-item__table-header--top">
+          <h4 className="warehouse-item__table-header warehouse-item__table-header--t-hidden">
             CONTACT NAME
           </h4>
-          <p className="warehouse-item__body-medium">{"item STATUS"}</p>
+          <p className="warehouse-item__body-medium">{"warehouse STATUS"}</p>
         </div>
         <div className="c__text-box">
-          <h4 className="warehouse-item__table-header item-details__table-header--top">
+          <h4 className="warehouse-item__table-header warehouse-item__table-header--t-hidden">
             CONTACT INFORMATION
           </h4>
           <p className="warehouse-item__body-medium">{"+1 (222) 333-4444"}</p>
@@ -62,8 +62,12 @@ function WarehouseItem() {
         </div>
       </div>
       <div className="warehouse-item__icons-box">
-        <img src={deleteIcon} alt="delete icon" />
-        <img src={editIcon} alt="edit icon" />
+        <Link to={`/warehouse/${"warehouse.id"}/delete`}>
+          <img src={deleteIcon} alt="delete icon" />
+        </Link>
+        <Link to={`/warehouse/${"warehouse.id"}/edit`}>
+          <img src={editIcon} alt="edit icon" />
+        </Link>
       </div>
     </div>
   );
