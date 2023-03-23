@@ -1,13 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
-import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import { Footer } from "./components/Footer/Footer";
 import { InventoryList } from "./components/InventoryList/InventoryList";
-import WarehouseList from "./components/WarehouseList/WarehouseList";
-import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
-import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
-import DeleteModal from "./components/DeleteModal/DeleteModal";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import "./App.scss";
+import Header from "./components/Header/Header";
+import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
+import DeleteModal from "./components/DeleteModal/DeleteModal";
 
 function App() {
   return (
