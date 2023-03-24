@@ -1,0 +1,58 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse-list {
+  &__component {
+    margin: 0 $m-margin-page-lateral;
+    box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+
+    @include tablet {
+      margin: 0 $t-margin-page-lateral;
+    }
+
+    @include desktop {
+      width: $d-content-width;
+      margin: auto;
+    }
+  }
+
+  &__table-row {
+    display: none;
+    background-color: $background-light-color;
+
+    @include tablet {
+      &--t-show {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 2rem;
+      }
+    }
+  }
+
+  &__header-box {
+    display: flex;
+    align-items: center;
+    flex: 6;
+  }
+
+  &__table-header {
+    @include m-table-header($primary-dark-color);
+    flex: 1;
+    display: flex;
+
+    @include tablet {
+      @include t-table-header($secondary-dark-color);
+      margin: 0;
+    }
+
+    &--last {
+      flex: 1;
+      text-align: end;
+    }
+  }
+
+  &__icon {
+    width: 1rem;
+  }
+}

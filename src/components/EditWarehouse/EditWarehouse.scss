@@ -1,7 +1,7 @@
 @use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/variables" as *;
 
-.add-warehouse {
+.edit-warehouse {
   &__component {
     background-color: $primary-light-color;
     margin: 0 $m-margin-page-lateral;
