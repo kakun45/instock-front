@@ -29,7 +29,7 @@ function WarehouseItem({ warehouse }) {
           <h4 className="warehouse-item__table-header  warehouse-item__table-header--t-hidden">
             ADDRESS
           </h4>
-          <p className="warehouse-item__body-medium">{`${warehouse.address} ${warehouse.city} ${warehouse.country}`}</p>
+          <p className="warehouse-item__body-medium">{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</p>
         </div>
       </div>
       <div className="warehouse-item__right-side">
