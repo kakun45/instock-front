@@ -16,6 +16,7 @@ export const InventoryCard = ({ item }) => {
     category,
     status,
     quantity,
+    warehouse_name,
   } = item;
 
   console.log(status);
@@ -59,7 +60,7 @@ export const InventoryCard = ({ item }) => {
 
           <div className="inventory__warehouses">
             <p>WAREHOUSE</p>
-            <p>Manhattan</p>
+            <p>{`${warehouse_name}`}</p>
           </div>
 
           <div className="inventory__icons">
@@ -78,14 +79,16 @@ export const InventoryCard = ({ item }) => {
           <img src={arrowIcon} alt="chevron arrow icon"></img>
         </div>
         <p>{`${category}`}</p>
-        <div >
+        <div>
           <p
             className={
-              status === "Out of Stock" ? "out_stock  inventory__status-active-container" : "inventory__status-text inventory__status-active-container"
+              status === "Out of Stock"
+                ? "out_stock  inventory__status-active-container"
+                : "inventory__status-text inventory__status-active-container"
             }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
-        <p>Manhattan</p>
+        <p>{`${warehouse_name}`}</p>
         <span>
           <img
             src={trashcanIcon}
