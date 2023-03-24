@@ -2,6 +2,9 @@
 
 import React from "react";
 import "../InventoryList/InventoryList.scss";
+import "./SearchBar.scss";
+
+
 
 
 const SearchBar = () => {
