@@ -17,7 +17,7 @@ export const InventoryList = ({
 }) => {
   const { inventoryId } = useParams();
 
-  useEffect(() => {
+  useEffect( () => {
     axios
       .get(`${API_URI}/api/inventories`)
       .then((res) => {
@@ -25,7 +25,7 @@ export const InventoryList = ({
       })
 
       .catch((err) => console.log(err));
-  }, [ inventoryId]);
+  }, [ inventoryId ]);
 
   return (
     <>

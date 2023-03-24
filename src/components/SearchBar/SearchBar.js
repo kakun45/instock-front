@@ -3,6 +3,7 @@
 import React from "react";
 import "../InventoryList/InventoryList.scss";
 import "./SearchBar.scss";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,9 @@ const SearchBar = () => {
             type="text"
             placeholder="Search..."
           />
-          <button className="inventory__search-button">+ Add New Item</button>
+          <Link to='/inventory/add' >
+            <button className="inventory__search-button">+ Add New Item</button>
+          </Link>
         </div>
       </div>
     </div>
