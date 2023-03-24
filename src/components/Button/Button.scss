@@ -1,0 +1,50 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.default-button {
+  @include m-button($primary-light-color);
+  // padding: 0.625rem;
+  border: none;
+  border-radius: 1.25rem;
+  margin-left: 1.75rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+
+  @include tablet {
+    @include t-button($primary-light-color);
+    width: 5rem;
+    margin: 0;
+  }
+
+  &--high-emphasis {
+    @include m-button($primary-light-color);
+    background-color: $primary-key-color;
+
+    &:hover {
+      background-color: $background-dark-color;
+    }
+
+    @include tablet {
+      @include t-button($primary-light-color);
+    }
+  }
+
+  &--low-emphasis {
+    @include m-button($primary-key-color);
+    background-color: $primary-light-color;
+
+    @include tablet {
+      @include t-button($primary-key-color);
+    }
+  }
+
+  &:hover {
+    background-color: $background-dark-color;
+  }
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

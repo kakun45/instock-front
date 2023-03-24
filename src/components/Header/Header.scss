@@ -1,0 +1,49 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  background-color: #232940;
+  padding: 1.6rem 1.6rem 0.5rem;
+  text-align: center;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+.navigation {
+  text-align: center;
+  &__logo {
+    height: 1.056rem;
+    width: 5.613rem;
+    margin-bottom: 1rem;
+    @include tablet {
+      margin-right: 15rem;
+      @include desktop {
+        margin-right: 45rem;
+      }
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
+  &__item-wrapper {
+    width: 100%;
+    margin: 0 2.5rem 0 2.5rem;
+    width: 100%;
+    border-radius: 0.3rem;
+
+    &__item-wrapper:hover {
+      background-color: black;
+      border-radius: 0.3rem;
+    }
+  }
+}

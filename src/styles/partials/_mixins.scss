@@ -1,3 +1,5 @@
+@use "./typography.scss";
+
 // Media Queries
 @mixin tablet {
   @media (min-width: 768px) {
@@ -41,7 +43,6 @@
   font-size: 0.813rem;
   font-weight: 600;
   line-height: 1.25rem;
-  margin: 1rem 0 1.5rem;
 }
 
 @mixin m-button($color) {
@@ -49,7 +50,6 @@
   font-size: 0.813rem;
   font-weight: 600;
   line-height: 1.25rem;
-  margin: 0.5rem 0;
 }
 
 @mixin m-table-header($color) {
@@ -111,7 +111,6 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
-  margin: 1.5rem 0 0.25rem;
 }
 
 @mixin t-button($color) {
@@ -119,7 +118,6 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
-  margin: 0.5rem 0;
 }
 
 @mixin t-table-header($color) {

@@ -1,0 +1,118 @@
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/variables" as *;
+
+.add-inventory {
+  &__component {
+    background-color: $primary-light-color;
+    margin: 0 $m-margin-page-lateral;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+    @include tablet {
+      margin: 0 $t-margin-page-lateral;
+    }
+    @include desktop {
+      width: $d-content-width;
+      margin: auto;
+    }
+  }
+  &__header {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  &__main-content {
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__form-form-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__left-side {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: solid 1px #bdc5d5;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex: 1;
+      padding-right: 2rem;
+      margin-top: 0;
+      border-bottom: none;
+      border-top: none;
+    }
+  }
+
+  &__right-side {
+    @include tablet {
+      flex: 1;
+      padding-left: $t-margin-page-lateral;
+      border-left: 0.063rem solid $secondary-light-color;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.inventory-form {
+  margin: 0 auto;
+  &__radio-label {
+    margin-right: 2rem;
+  }
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+  &__label {
+    font-size: 0.813rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  &__input {
+    font-size: 0.813rem;
+    text-indent: 0.5rem;
+    border: 1px solid #bdc5d5;
+    border-radius: 1.25rem;
+    line-height: 1.8rem;
+    margin-top: 0.2rem;
+    width: 100%;
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &__textarea {
+    border: 1px solid #bdc5d5;
+    border-radius: 1.25rem;
+    height: 7.5rem;
+    text-indent: 1rem;
+    width: 33ch;
+  }
+  &__radio-input {
+    margin-right: 0.5rem;
+    &--left {
+      margin-right: 3rem;
+    }
+  }
+
+  &__warehouse-label {
+    margin-top: 1rem;
+  }
+}
+.button-wrapper {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  @include tablet {
+    justify-content: flex-end;
+  }
+  @include desktop {
+    margin-left: 18.5rem;
+  }
+}
