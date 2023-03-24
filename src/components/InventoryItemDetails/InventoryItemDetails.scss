@@ -11,6 +11,11 @@
     @include tablet {
       margin: 0 $t-margin-page-lateral;
     }
+
+    @include desktop {
+      width: $d-content-width;
+      margin: 0 auto;
+    }
   }
 
   &__main-content {

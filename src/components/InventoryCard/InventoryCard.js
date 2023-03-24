@@ -32,7 +32,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               <img
                 className="inventory"
                 src={arrowIcon}
-                alt="chevron arrow icon"></img>
+                alt="chevron arrow icon"
+              ></img>
             </div>
           </div>
           <div className="inventory__catagory">
@@ -44,11 +45,13 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               onClick={() => {
                 setModal(true);
                 setDeleteItem(item);
-              }}>
+              }}
+            >
               <img
                 className="inventory__icons-trash"
                 src={trashcanIcon}
-                alt="trash can icon"></img>
+                alt="trash can icon"
+              ></img>
             </button>
           </div>
         </div>
@@ -62,7 +65,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
                   status === "Out of Stock"
                     ? "out_stock"
                     : "inventory__status-text"
-                }>{`${status}`}</p>
+                }
+              >{`${status}`}</p>
             </div>
           </div>
 
@@ -81,7 +85,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
-                alt="pencil edit icon"></img>
+                alt="pencil edit icon"
+              ></img>
             </Link>
           </div>
         </div>
@@ -101,7 +106,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               status === "Out of Stock"
                 ? "out_stock  inventory__status-active-container"
                 : "inventory__status-text inventory__status-active-container"
-            }>{`${status}`}</p>
+            }
+          >{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
         <p>{`${warehouse_name}`}</p>
@@ -110,18 +116,21 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             onClick={() => {
               setModal(true);
               setDeleteItem(item);
-            }}>
+            }}
+          >
             <img
               className="inventory__icons-trash"
               src={trashcanIcon}
-              alt="trash can icon"></img>
+              alt="trash can icon"
+            ></img>
           </button>
           <Link to={`/inventory/${id}/edit`}>
             <button>
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
-                alt="pencil edit icon"></img>
+                alt="pencil edit icon"
+              ></img>
             </button>
           </Link>
         </span>
