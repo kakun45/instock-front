@@ -18,9 +18,6 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
     status,
     quantity,
   } = item;
-
-
-
   return (
     <>
       <div className="inventory__product-container">
@@ -28,10 +25,13 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
           <div className="inventory__items">
             <p>INVENTORY ITEM</p>
             <div className="inventory__chevron-container">
-              <Link path={`"/inventory/${id}"`}>
+              <Link to={`/inventory/${id}`}>
                 <p className="inventory__item-text">{`${item_name}`}</p>
               </Link>
-              <img src={arrowIcon} alt="chevron arrow icon"></img>
+              <img
+                className="inventory"
+                src={arrowIcon}
+                alt="chevron arrow icon"></img>
             </div>
           </div>
           <div className="inventory__catagory">
@@ -42,6 +42,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             <button
               onClick={() => {
                 setModal(true);
+                setDeleteItem(item);
               }}>
               <img
                 className="inventory__icons-trash"
@@ -75,7 +76,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
           </div>
 
           <div className="inventory__icons">
-            <Link path={`"/inventory/${id}"`}>
+            <Link to={`inventory/${id}/edit`}>
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
@@ -87,7 +88,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
 
       <div className="inventory__item-container--tablet">
         <div className="inventory__chevron-container">
-          <Link path={`"/inventory/${id}"`}>
+          <Link to={`/inventory/${id}`}>
             <p className="inventory__item-text">{`${item_name}`}</p>
           </Link>
           <img src={arrowIcon} alt="chevron arrow icon"></img>
@@ -114,12 +115,14 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               src={trashcanIcon}
               alt="trash can icon"></img>
           </button>
-          <button>
-            <img
-              src={editIcon}
-              className="inventory_icons-edit"
-              alt="pencil edit icon"></img>
-          </button>
+          <Link to={`inventory/${id}/edit`}>
+            <button>
+              <img
+                src={editIcon}
+                className="inventory_icons-edit"
+                alt="pencil edit icon"></img>
+            </button>
+          </Link>
         </span>
       </div>
     </>

@@ -4,12 +4,29 @@
 @use "../../styles/partials/variables" as *;
 
 .delete-modal {
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+
+    @media (min-width: 768px) {
+      display: block;
+      background-color: rgba(0, 0, 0, 0.3);
+      // opacity: 0.7;
+    }
+  }
+
   &__container {
+    opacity: 100%;
     width: 100%;
     height: 100%;
     border: 0.01rem solid black;
     // display: flex;
-    position: absolute;
+    position: fixed;
     padding: 1rem;
     z-index: 3;
     top: 0;
@@ -19,29 +36,25 @@
       width: 60rem;
       height: 20rem;
       left: 0;
-  right: 0;
-  margin-top: 10rem;
-  margin-left: auto;
-  margin-right: auto;
-
-
-      //   align-content: center;
-      //   justify-content: center;
-      //   border: none;
+      right: 0;
+      margin-top: 10rem;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
-  &__X-container {
-    align-self: flex-end;
-  }
-
   &__X {
-    font-size: 1.5rem;
+    width: 2rem;
     cursor: pointer;
+    position: absolute;
+    right: 3rem;
   }
 
   &__header {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 5rem;
+
     @include tablet {
       margin-left: 2rem;
       font-size: 2.5rem;
@@ -49,11 +62,16 @@
   }
 
   &__confrim-text {
+    position: absolute;
+    top: 12rem;
+    width: 90%;
+    font-size: 1rem;
     @include tablet {
       width: 55ch;
-      margin-top: 1rem;
+      margin-top: 0rem;
       margin-left: 2rem;
       font-size: 1.5rem;
+      top: 10rem;
     }
   }
 
@@ -65,14 +83,15 @@
 
     @include tablet {
       position: absolute;
-    margin-top: 4rem;
-    justify-content: center;
-    right: 5rem;
+      margin-top: 4rem;
+      justify-content: center;
+      right: 5rem;
+      bottom: 2rem;
     }
   }
 
   &__cancel-button {
-    width: 17rem;
+    width: 15rem;
     height: 2.75rem;
     border-radius: 20px;
     border: none;
@@ -84,7 +103,7 @@
   }
 
   &__delete-button {
-    width: 17rem;
+    width: 15rem;
     height: 2.75rem;
     border-radius: 20px;
     background-color: $accent-negative-color;

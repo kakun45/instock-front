@@ -9,6 +9,7 @@ import WarehouseList from "./components/WarehouseList/WarehouseList";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventory from "./components/EditInventory/EditInventory";
 import AddInventory from "./components/AddInventory/AddInventory";
+import Inventory from "./pages/Inventory/Inventory";
 
 // import InventoryList from "./components/InventoryList/InventoryList";
 
@@ -28,6 +29,7 @@ function App() {
         {/* <Route path="/inventory" element={<InventoryList />} /> */}
         <Route path="/warehouses/:warehouseId/add" element={<AddWarehouse />} />
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
+        <Route path="/inventory"  element={ <Inventory /> }  />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -150,7 +150,7 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
       align-items: center;
       margin-bottom: 1rem;
       background-color: #f7f8f9;
-      opacity: 70%;
+
     }
 
     &__items {
@@ -182,7 +182,10 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
 
   &__chevron-container {
     display: flex;
-    min-width: fit-content;
+  }
+
+  &__chevron:hover {
+         transform: translateX(50%)
   }
 
   &__status-active-container {

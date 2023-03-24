@@ -5,12 +5,6 @@ import editIcon from "../../assets/icons/edit-24px.png";
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import "./InventoryItemDetails.scss";
-<<<<<<< HEAD
-import { useParams } from "react-router-dom";
-
-function InventoryItemDetails() {
-
-=======
 const API_URI = process.env.REACT_APP_API_URI;
 
 function InventoryItemDetails() {
@@ -25,7 +19,6 @@ function InventoryItemDetails() {
       })
       .catch((err) => console.error(err));
   }, [itemId]);
->>>>>>> develop-front
 
   return (
     <div className="item-details__component">
