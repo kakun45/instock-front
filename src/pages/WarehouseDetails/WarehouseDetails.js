@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import "./WarehouseDetails.scss";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import icon from "../../assets/icons/edit-24px.png";
 import Button from "../../components/Button/Button";
-import NavHeader from "../../components/NavHeader/NavHeader";
 import { InventoryList } from "../../components/InventoryList/InventoryList";
-import { useParams } from "react-router-dom";
+import NavHeader from "../../components/NavHeader/NavHeader";
+import "./WarehouseDetails.scss";
 const API_URI = process.env.REACT_APP_API_URI;
 
 const WarehouseDetails = () => {
@@ -21,7 +21,7 @@ const WarehouseDetails = () => {
       })
       .catch((err) => console.error(err));
   }, [warehouseId]);
-  const handleOnClick = () => {};
+  const handleOnClick = () => {}; // TODO
 
   return (
     <div>
