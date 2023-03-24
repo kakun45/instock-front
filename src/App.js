@@ -4,6 +4,8 @@ import InventoryItemDetails from "./components/InventoryItemDetails/InventoryIte
 import "./App.scss";
 import Header from "./components/Header/Header";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
+
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
@@ -28,6 +30,10 @@ function App() {
         <Route path="/inventory/:itemId/add" element={<AddInventory />} />
         {/* <Route path="/inventory" element={<InventoryList />} /> */}
         <Route path="/warehouses/:warehouseId/add" element={<AddWarehouse />} />
+        <Route
+          path="/warehouses/:warehouseId/edit"
+          element={<EditWarehouse />}
+        />
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
         <Route path="/inventory"  element={ <Inventory /> }  />
       </Routes>

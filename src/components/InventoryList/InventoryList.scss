@@ -102,7 +102,6 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     border-top: 0.01rem solid #bdc5d5;
     display: flex;
     margin: 0 auto;
-    padding-left: 2rem;
 
     @media (min-width: 768px) {
       display: none;
@@ -112,21 +111,25 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   &__item-container {
     width: 50%;
     height: 14rem;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 1.5rem;
+    padding-left: 1rem;
+
     // border: .01rem solid black;
   }
 
   &__status-container {
     width: 50%;
     height: 14rem;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-top: .5rem;
+    gap: 1.5rem;
+     padding-left: 1rem;
+
+
     //  border: .01rem solid black;
   }
 
@@ -176,9 +179,9 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   // }
 
 
-  &__quantity-text{
-      margin-top: 2rem;
-  }
+  // &__quantity-text{
+  //     margin-top: 2rem;
+  // }
 
   &__chevron-container {
     display: flex;
@@ -193,7 +196,6 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     border-radius: 20rem;
     width: 6rem;
     height: min-content;
-    color: #158463;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,8 +205,12 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     }
   }
 
-//   &__status-text {
-//   }
+  &__status-text--green {
+        color: #158463;
+  }
+   &__status-text--red {
+        color: red;
+  }
 
   &__item-container--tablet {
     display: none;
@@ -253,13 +259,23 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   }
 
 &__icons-trash{
+  padding-top: 5rem;
+  background-color: #f7f8f9;
     @media (min-width:768px){
         margin-right: 1rem;
+        padding: 0;
     }
 }
 
 &__icons-edit{
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  background-color: #f7f8f9;
+
     @media (min-width:768px){
+      display: block;
+      width: 100%;
     }
 }
 
@@ -285,18 +301,5 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
 //         border: .01rem solid black;
 // }
 
-.out_stock {
-  background-color: #bdc5d5;
-  border-radius: 20rem;
-  width: fit-content;
-  height: min-content;
-  color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  @media (min-width: 768px) {
-    width: 6rem;
-  }
-}
 }
