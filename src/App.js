@@ -18,7 +18,7 @@ import Inventory from "./pages/Inventory/Inventory";
 function App() {
   return (
     <BrowserRouter>
-      <Header  />
+      <Header />
       <Routes>
         {/* TODO change element to reflect home page */}
         <Route path="/" element={<InventoryItemDetails />} />
@@ -28,6 +28,8 @@ function App() {
         <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
         <Route path="/inventory/:itemId/edit" element={<EditInventory />} />
         <Route path="/inventory/:itemId/add" element={<AddInventory />} />
+        <Route path="/inventory/add" element={<AddInventory />} />
+
         {/* <Route path="/inventory" element={<InventoryList />} /> */}
         <Route path="/warehouses/:warehouseId/add" element={<AddWarehouse />} />
         <Route
@@ -35,9 +37,9 @@ function App() {
           element={<EditWarehouse />}
         />
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
-        <Route path="/inventory"  element={ <Inventory /> }  />
+        <Route path="/inventory" element={<Inventory />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

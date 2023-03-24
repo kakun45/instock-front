@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import { InventoryList } from "../../components/InventoryList/InventoryList";
 import SearchBar from "../../components/SearchBar/SearchBar";

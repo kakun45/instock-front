@@ -69,11 +69,10 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
       height: 2.5rem;
       margin: 0 auto;
       display: flex;
-  //  justify-content: space-around;
+      //  justify-content: space-around;
       align-items: center;
       margin-bottom: 1rem;
       background-color: #f7f8f9;
-
     }
 
     &__items {
@@ -108,7 +107,7 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   }
 
   &__chevron:hover {
-         transform: translateX(50%)
+    transform: translateX(50%);
   }
 
   &__status-active-container {
@@ -186,14 +185,11 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
         padding: 0;
 
     }
-}
+  }
 
-&__icons-edit{
-  display: flex;
-  justify-content: flex-end;
-  width: 90%;
-    @media (min-width:768px){
+  &__icons-edit {
+    @media (min-width: 768px) {
     }
-}
+  }
 
 }
