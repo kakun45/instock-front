@@ -17,6 +17,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
     category,
     status,
     quantity,
+    warehouse_name,
   } = item;
   return (
     <>
@@ -72,7 +73,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
 
           <div className="inventory__warehouses">
             <p>WAREHOUSE</p>
-            <p>Manhattan</p>
+            <p>{`${warehouse_name}`}</p>
           </div>
 
           <div className="inventory__icons">
@@ -103,7 +104,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
-        <p>Manhattan</p>
+        <p>{`${warehouse_name}`}</p>
         <span>
           <button
             onClick={() => {
