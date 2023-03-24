@@ -1,9 +1,12 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 
+
 import "./EditInventory.scss";
 
 function EditInventory() {
+
+
   return (
     <div className="edit-inventory__component">
       <NavHeader title="Edit Inventory Item" path="/inventory">

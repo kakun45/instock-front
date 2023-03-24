@@ -1,9 +1,38 @@
+/** @format */
+
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
 import "./AddInventory.scss";
 
 function AddInventory() {
+  const [formData, setFormData] = useState({
+    warehouse_id: "",
+    item_name: "",
+    description: "",
+    category: "",
+    status: "",
+    quantity: "",
+    warehouse_name: "",
+  });
+
+  const [warehouseData, setWarehouseData] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/api/warehouses`).then((res) => {
+      setWarehouseData(res.data);
+    });
+  }, []);
+
+  const handleChange = (event) => {
+    console.dir(event.target);
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+    console.log(formData);
+  };
+
   return (
     <div className="add-inventory__component">
       <NavHeader title="Add New Inventory Item" path="/inventory">
@@ -19,17 +48,24 @@ function AddInventory() {
               <input
                 className="inventory-form__input"
                 placeholder="Item Name"
+                name="item_name"
+                value={formData.item_name}
+                onChange={handleChange}
               />
               <label className="inventory-form__label">Description</label>
               <textarea
                 className="inventory-form__textarea"
                 placeholder="Please enter a brief description"
-              ></textarea>
+                name="description"
+                value={formData.description}
+                onChange={handleChange}></textarea>
               <label className="inventory-form__label">Category</label>
               <select
                 className="inventory-form__input"
                 placeholder="Please select"
-              >
+                value={formData.category}
+                name="category"
+                onChange={handleChange}>
                 <option value="Please select">Please select</option>
               </select>
             </div>
@@ -44,8 +80,9 @@ function AddInventory() {
               <input
                 className="inventory-form__radio-input"
                 type="radio"
-                name="inStock"
-                value="inStock"
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
               />
               <label className="inventory-form__radio-label" htmlFor="inStock">
                 In stock
@@ -53,13 +90,13 @@ function AddInventory() {
               <input
                 className="inventory-form__radio-input"
                 type="radio"
-                name="outOfStock"
-                value="outOfStock"
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
               />
               <label
                 className="inventory-form__radio-label"
-                htmlFor="outOfStock"
-              >
+                htmlFor="outOfStock">
                 Out of stock
               </label>
 
@@ -67,11 +104,13 @@ function AddInventory() {
               <div className="inventory-form__warehouse-label">
                 <label className="inventory-form__label">Quantity</label>
               </div>
-              <input className="inventory-form__input" placeholder="0" />
-              <div className="inventory-form__warehouse-label">
-                <label className="inventory-form__label">Warehouse</label>
-              </div>
-              <input className="inventory-form__input" placeholder="0" />
+              <input
+                className="inventory-form__input"
+                placeholder="0"
+                name="quantity"
+                value={formData.quantity}
+                onChange={handleChange}
+              />
               {/* ////WAREHOUSE SELECTOR/// */}
               <div className="inventory-form__warehouse-label">
                 <label className="inventory-form__label">Warehouse</label>
@@ -79,8 +118,19 @@ function AddInventory() {
               <select
                 className="inventory-form__input"
                 placeholder="Please select"
-              >
-                <option value="Please select">Please select</option>
+                name="status"
+                value={formData.category}
+                onChange={handleChange}>
+                {warehouseData.map((warehouse) => {
+                  return (
+                    <option
+                      name="warehouse_name"
+                      value={formData.category}
+                      onChange={handleChange}>
+                      {warehouse.warehouse_name}
+                    </option>
+                  );
+                })}
               </select>
             </div>
           </div>

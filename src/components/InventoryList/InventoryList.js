@@ -25,7 +25,7 @@ export const InventoryList = ({
       })
 
       .catch((err) => console.log(err));
-  }, [inventoryList]);
+  }, [ inventoryId]);
 
   return (
     <>

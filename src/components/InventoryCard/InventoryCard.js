@@ -62,11 +62,10 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             <div className="inventory__status-active-container">
               <p
                 className={
-                  status === "Out of Stock"
-                    ? "out_stock"
-                    : "inventory__status-text"
-                }
-              >{`${status}`}</p>
+                  status === "In Stock"
+                    ? "inventory__status-text--green"
+                    : "inventory__status-text--red"
+                }>{`${status}`}</p>
             </div>
           </div>
 
@@ -80,7 +79,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             <p>{`${warehouse_name}`}</p>
           </div>
 
-          <div className="inventory__icons">
+          <div className="inventory__icons-edit">
             <Link to={`/${id}/edit`}>
               <img
                 src={editIcon}
@@ -103,11 +102,10 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
         <div>
           <p
             className={
-              status === "Out of Stock"
-                ? "out_stock  inventory__status-active-container"
-                : "inventory__status-text inventory__status-active-container"
-            }
-          >{`${status}`}</p>
+              status === "In Stock"
+                ? "inventory__status-text--green inventory__status-active-container"
+                : "inventory__status-text--red inventory__status-active-container"
+            }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
         <p>{`${warehouse_name}`}</p>
