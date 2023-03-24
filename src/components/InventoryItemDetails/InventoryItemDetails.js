@@ -2,8 +2,11 @@ import editIcon from "../../assets/icons/edit-24px.png";
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import "./InventoryItemDetails.scss";
+import { useParams } from "react-router-dom";
 
 function InventoryItemDetails() {
+
+
   return (
     <div className="item-details__component">
       <NavHeader title={"Television"} path="/inventory">

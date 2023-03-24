@@ -1,32 +1,58 @@
-import React from 'react';
-import './DeleteModal.scss';
-import { Link } from 'react-router-dom';
+/** @format */
 
-const DeleteInventoryModal = () => {
+import React from "react";
+import "./DeleteModal.scss";
+import axios from "axios";
+
+const DeleteInventoryModal = ({
+  setModal,
+  inventoryList,
+  deleteItem,
+  setInventoryList,
+}) => {
+  const deleteInventoryItem = (id) => {
+    axios
+      .delete(`http://localhost:8080/api/inventories/${id}`)
+      .then((_res) => {
+        setModal(false);
+        const updatedList = inventoryList.filter((item) => item.id !== id);
+        setInventoryList(updatedList);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="delete-modal__container">
       <div className="delete-modal__X-container">
-        <Link path="/inevntories">
+        <button onClick={() => setModal(false)}>
           <h5 className="delete-modal__X">X</h5>
-        </Link>
+        </button>
       </div>
       <div className="delete-modal__header-container">
-        <h1 className="delete-modal__header">
-          {`Delete Television Inventory Item`}
-        </h1>
+        <h1 className="delete-modal__header">{`Delete ${deleteItem.item_name} Inventory Item`}</h1>
       </div>
       <div className="delete-modal__confirm-container">
         <p className="delete-modal__confrim-text">
-          {`Please confirm that you’d like to delete Television from the inventory
+          {`Please confirm that you’d like to delete  ${deleteItem.item_name}  from the inventory
           list. You won’t be able to undo this action.`}
         </p>
       </div>
       <div className="delete-modal__button-container">
-        <button className="delete-modal__cancel-button">Cancel</button>
-        <button className="delete-modal__delete-button">Delete</button>
+        <button
+          onClick={() => setModal(false)}
+          className="delete-modal__cancel-button">
+          Cancel
+        </button>
+        <button
+          onClick={() => {
+            deleteInventoryItem(deleteItem.id);
+          }}
+          className="delete-modal__delete-button">
+          Delete
+        </button>
       </div>
     </div>
   );
-}
+};
 
-export default DeleteInventoryModal
+export default DeleteInventoryModal;

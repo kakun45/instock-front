@@ -97,7 +97,7 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
 
   &__product-container {
     width: 100%;
-    height: 15rem;
+    height: 16rem;
     border-bottom: 0.01rem solid #bdc5d5;
     border-top: 0.01rem solid #bdc5d5;
     display: flex;
@@ -126,6 +126,7 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: .5rem;
     //  border: .01rem solid black;
   }
 
@@ -174,9 +175,10 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   // &__catagory{
   // }
 
-  // &__quantity-text{
-  //     margin-top: 2.5rem;
-  // }
+
+  &__quantity-text{
+      margin-top: 2rem;
+  }
 
   &__chevron-container {
     display: flex;
@@ -250,6 +252,11 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
 &__icons-trash{
     @media (min-width:768px){
         margin-right: 1rem;
+    }
+}
+
+&__icons-edit{
+    @media (min-width:768px){
     }
 }
 

@@ -12,7 +12,7 @@ import Inventory from "./pages/Inventory/Inventory";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header  />
       <Routes>
         {/* TODO change element to reflect home page */}
         <Route path="/" element={<InventoryItemDetails />} />
@@ -23,7 +23,6 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/warehouses/:warehouseId/add" element={<AddWarehouse />} />
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
-        <Route path="/delete" element={<DeleteModal />} />
       </Routes>
       <Footer />
     </BrowserRouter>
