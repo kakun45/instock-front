@@ -10,12 +10,12 @@ function Header() {
           <ul className="navigation__list">
             <div className="navigation__item-wrapper">
               <li className="navigation__item navigation__item--active">
-                WAREHOUSES
+                Warehouses
               </li>
             </div>
 
             <div className="navigation__item-wrapper">
-              <li className="navigation__item">INVENTORY</li>
+              <li className="navigation__item">Inventory</li>
             </div>
           </ul>
         </div>
