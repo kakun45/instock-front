@@ -11,13 +11,14 @@ import WarehouseList from "./components/WarehouseList/WarehouseList";
 import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventory from "./components/EditInventory/EditInventory";
 import AddInventory from "./components/AddInventory/AddInventory";
+import Inventory from "./pages/Inventory/Inventory";
 
 // import InventoryList from "./components/InventoryList/InventoryList";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header  />
       <Routes>
         {/* TODO change element to reflect home page */}
         <Route path="/" element={<InventoryItemDetails />} />
@@ -34,9 +35,9 @@ function App() {
           element={<EditWarehouse />}
         />
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
-        <Route path="/delete" element={<DeleteModal />} />
+        <Route path="/inventory"  element={ <Inventory /> }  />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

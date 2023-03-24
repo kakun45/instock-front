@@ -9,21 +9,23 @@ import axios from "axios";
 import { InventoryCard } from "../InventoryCard/InventoryCard";
 const API_URI = process.env.REACT_APP_API_URI;
 
-export const InventoryList = () => {
+export const InventoryList = ({
+  setModal,
+  setDeleteItem,
+  inventoryList,
+  setInventoryList,
+}) => {
   const { inventoryId } = useParams();
-
-  const [inventoryList, setInventoryList] = useState([]);
 
   useEffect(() => {
     axios
       .get(`${API_URI}/api/inventories`)
       .then((res) => {
         setInventoryList(res.data);
-        console.log(res.data);
       })
 
       .catch((err) => console.log(err));
-  }, [inventoryId]);
+  }, [inventoryList]);
 
   return (
     <>
@@ -50,7 +52,14 @@ export const InventoryList = () => {
         </div>
       </div>
       {inventoryList.map((item) => {
-        return <InventoryCard key={item.id} item={item} />;
+        return (
+          <InventoryCard
+            key={item.id}
+            item={item}
+            setModal={setModal}
+            setDeleteItem={setDeleteItem}
+          />
+        );
       })}
     </>
   );

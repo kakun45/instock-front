@@ -1,18 +1,37 @@
-import React from 'react'
-// import Header from '../../components/Header/Header'
-import { InventoryCard } from '../../components/InventoryCard/InventoryCard'
-import { InventoryList } from '../../components/InventoryList/InventoryList'
-import SearchBar from '../../components/SearchBar/SearchBar'
-import { Footer } from '../../components/Footer/Footer'
+/** @format */
+
+import React from "react";
+import { InventoryList } from "../../components/InventoryList/InventoryList";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import "../../components/InventoryList/InventoryList.scss";
+import { useState } from "react";
 
 const Inventory = () => {
+  const [modal, setModal] = useState(false);
+  const [deleteItem, setDeleteItem] = useState({});
+  const [inventoryList, setInventoryList] = useState([]);
+
   return (
     <>
-    <SearchBar />
-    <InventoryList />
-    <Footer />
+      <SearchBar />
+      {modal ? (
+        <DeleteModal
+          setModal={setModal}
+          deleteItem={deleteItem}
+          setInventoryList={setInventoryList}
+        />
+      ) : (
+        ""
+      )}
+      <InventoryList
+        setModal={setModal}
+        setDeleteItem={setDeleteItem}
+        inventoryList={inventoryList}
+        setInventoryList={setInventoryList}
+      />
     </>
   );
-}
+};
 
-export default Inventory
+export default Inventory;
