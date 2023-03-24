@@ -6,7 +6,7 @@ import "./AddInventory.scss";
 function AddInventory() {
   return (
     <div className="add-inventory__component">
-      <NavHeader title="Add New inventory" path="/inventorys">
+      <NavHeader title="Add New Inventory Item" path="/inventory">
         <></>
       </NavHeader>
       <div className="add-inventory__main-content">
@@ -21,13 +21,16 @@ function AddInventory() {
                 placeholder="Item Name"
               />
               <label className="inventory-form__label">Description</label>
-              <textarea>
-                className="inventory-form__textarea" placeholder="This 50'' 4K
-                LED TV provides a crystal-clear picture and vivid colors"
-              </textarea>
+              <textarea
+                className="inventory-form__textarea"
+                placeholder="Please enter a brief description"
+              ></textarea>
               <label className="inventory-form__label">Category</label>
-              <select className="inventory-form__input">
-                <option value="Electronics">Electronics</option>
+              <select
+                className="inventory-form__input"
+                placeholder="Please select"
+              >
+                <option value="Please select">Please select</option>
               </select>
             </div>
 
@@ -65,16 +68,19 @@ function AddInventory() {
                 <label className="inventory-form__label">Quantity</label>
               </div>
               <input className="inventory-form__input" placeholder="0" />
+              <div className="inventory-form__warehouse-label">
+                <label className="inventory-form__label">Warehouse</label>
+              </div>
+              <input className="inventory-form__input" placeholder="0" />
               {/* ////WAREHOUSE SELECTOR/// */}
               <div className="inventory-form__warehouse-label">
                 <label className="inventory-form__label">Warehouse</label>
               </div>
-              <select>
-                <option
-                  value="Please select"
-                  className="inventory-form__input"
-                  placeholder="Please select"
-                ></option>
+              <select
+                className="inventory-form__input"
+                placeholder="Please select"
+              >
+                <option value="Please select">Please select</option>
               </select>
             </div>
           </div>
