@@ -1,71 +1,67 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 
-import "./AddWarehouse.scss";
+import "./EditWarehouse.scss";
 
-function AddWarehouse() {
+function EditWarehouse() {
   return (
-    <div className="add-warehouse__component">
-      <NavHeader title="Add New Warehouse" path="/warehouses">
+    <div className="edit-warehouse__component">
+      <NavHeader title="Edit Warehouse" path="/editwarehouses">
         <></>
       </NavHeader>
-      <div className="add-warehouse__main-content">
-        {/* ////LEFT SIDE//// */}
-        <div className="add-warehouse__left-side">
-          <h3 className="add-warehouse__header">Warehouse Details</h3>
+      <div className="edit-warehouse__main-content">
+        {/* ////TOP AND LEFT SIDE//// */}
+        <div className="edit-warehouse__left-side">
+          <h3 className="edit-warehouse__header">Warehouse Details</h3>
           <form className="warehouse-form">
             <label className="warehouse-form__label">Warehouse Name</label>
             <input
               className="warehouse-form__input"
-              placeholder="Warehouse Name"
+              placeholder="Washington"
             ></input>
             <label className="warehouse-form__label">Street Address</label>
             <input
               className="warehouse-form__input"
-              placeholder="Street Address"
+              placeholder="33 Pearl St SW"
             ></input>
             <label className="warehouse-form__label">City</label>
-            <input className="warehouse-form__input" placeholder="City"></input>
-            <label className="warehouse-form__label">Country</label>
             <input
               className="warehouse-form__input"
-              placeholder="Country"
+              placeholder="Washington"
             ></input>
+            <label className="warehouse-form__label">Country</label>
+            <input className="warehouse-form__input" placeholder="USA"></input>
           </form>
         </div>
         {/* ///RIGHT SIDE//// */}
-        <div className="add-warehouse__right-side">
-          <h3 className="add-warehouse__header">Contact Details</h3>
+        <div className="edit-warehouse__right-side">
+          <h3 className="edit-warehouse__header">Contact Details</h3>
           <form className="warehouse-form">
             <label className="warehouse-form__label">Contact Name</label>
             <input
               className="warehouse-form__input"
-              placeholder="Contact Name"
+              placeholder="Graeme Lyon"
             ></input>
             <label className="warehouse-form__label">Position</label>
             <input
               className="warehouse-form__input"
-              placeholder="Position"
+              placeholder="Warehouse Manager"
             ></input>
             <label className="warehouse-form__label">Phone Number</label>
             <input
               className="warehouse-form__input"
-              placeholder="Phone Number"
+              placeholder="+1(647)504-0911"
             ></input>
             <label className="warehouse-form__label">Email</label>
             <input
               className="warehouse-form__input"
-              placeholder="Email"
+              placeholder="glyon@instock.com"
             ></input>
           </form>
           <div className="button-wrapper">
             <Button text="Cancel" emphasis="low-emphasis" type="button" />
 
-            <Button
-              text="Add Warehouse"
-              emphasis="high-emphasis"
-              type="button"
-            />
+            <Button text="Save" emphasis="high-emphasis" type="button" />
           </div>
         </div>
       </div>
@@ -73,4 +69,4 @@ function AddWarehouse() {
   );
 }
 
-export default AddWarehouse;
+export default EditWarehouse;
