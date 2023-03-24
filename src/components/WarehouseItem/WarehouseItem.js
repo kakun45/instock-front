@@ -54,14 +54,14 @@ function WarehouseItem({ warehouse }) {
         </div>
       </div>
       <div className="warehouse-item__icons-box">
-        <Link to={`/warehouse/${warehouse.id}/delete`}>
+        <Link to={`/warehouses/${warehouse.id}/delete`}>
           <img
             className="warehouse-item__icon"
             src={deleteIcon}
             alt="delete icon"
           />
         </Link>
-        <Link to={`/warehouse/${warehouse.id}/edit`}>
+        <Link to={`/warehouses/${warehouse.id}/edit`}>
           <img
             className="warehouse-item__icon"
             src={editIcon}
