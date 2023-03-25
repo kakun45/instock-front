@@ -1,5 +1,4 @@
 /** @format */
-
 import React from "react";
 import "../InventoryList/InventoryList.scss";
 import trashcanIcon from "../../assets/icons/delete_outline-24px.svg";
@@ -7,6 +6,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import arrowDrop from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
+
 
 export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
   const {
@@ -109,7 +109,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
         </div>
         <p>{`${quantity}`}</p>
         <p>{`${warehouse_name}`}</p>
-        <span>
+        <span className="inventory__icon-container" >
           <button
             onClick={() => {
               setModal(true);
@@ -123,13 +123,13 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             ></img>
           </button>
           <Link to={`/inventory/${id}/edit`}>
-            <button>
+            {/* <button> */}
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
                 alt="pencil edit icon"
               ></img>
-            </button>
+            {/* </button> */}
           </Link>
         </span>
       </div>
