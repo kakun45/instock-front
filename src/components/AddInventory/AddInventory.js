@@ -39,7 +39,6 @@ function AddInventory() {
         <></>
       </NavHeader>
       <div className="add-inventory__main-content">
-      
         {/* ////LEFT SIDE//// */}
         <form className="inventory-form">
           <div className="inventory-form__form-wrapper">
@@ -59,14 +58,16 @@ function AddInventory() {
                 placeholder="Please enter a brief description"
                 name="description"
                 value={formData.description}
-                onChange={handleChange}></textarea>
+                onChange={handleChange}
+              ></textarea>
               <label className="inventory-form__label">Category</label>
               <select
                 className="inventory-form__input"
                 placeholder="Please select"
                 value={formData.category}
                 name="category"
-                onChange={handleChange}>
+                onChange={handleChange}
+              >
                 <option value="Please select">Please select</option>
               </select>
             </div>
@@ -97,7 +98,8 @@ function AddInventory() {
               />
               <label
                 className="inventory-form__radio-label"
-                htmlFor="outOfStock">
+                htmlFor="outOfStock"
+              >
                 Out of stock
               </label>
 
@@ -121,13 +123,15 @@ function AddInventory() {
                 placeholder="Please select"
                 name="status"
                 value={formData.category}
-                onChange={handleChange}>
+                onChange={handleChange}
+              >
                 {warehouseData.map((warehouse) => {
                   return (
                     <option
                       name="warehouse_name"
                       value={formData.category}
-                      onChange={handleChange}>
+                      onChange={handleChange}
+                    >
                       {warehouse.warehouse_name}
                     </option>
                   );
@@ -140,7 +144,7 @@ function AddInventory() {
 
             <Button text="Add Item" emphasis="high-emphasis" type="button" />
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
