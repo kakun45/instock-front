@@ -12,6 +12,7 @@ import DeleteModal from "./components/DeleteModal/DeleteModal";
 import EditInventory from "./components/EditInventory/EditInventory";
 import AddInventory from "./components/AddInventory/AddInventory";
 import Inventory from "./pages/Inventory/Inventory";
+import WarehouseItem from "./components/WarehouseItem/WarehouseItem";
 
 // import InventoryList from "./components/InventoryList/InventoryList";
 
