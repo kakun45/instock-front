@@ -1,0 +1,32 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse-details-body {
+  background-color: $primary-light-color;
+  margin: 0 $m-margin-page-lateral;
+  box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+}
+
+.warehouse-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1rem;
+
+  &__contact-info {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__text-box {
+    flex: 1;
+  }
+
+  &__table-header {
+    @include m-table-header($secondary-dark-color);
+  }
+
+  &__body-text {
+    @include m-body-medium($primary-dark-color);
+  }
+}
