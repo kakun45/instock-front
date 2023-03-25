@@ -1,9 +1,9 @@
 /** @format */
-
 import React from "react";
 import "./DeleteModal.scss";
 import axios from "axios";
 import X from '../../assets/icons/close-24px.svg';
+// import { useNavigate } from "react-router-dom";
 
 const DeleteInventoryModal = ({
   setModal,
@@ -11,13 +11,20 @@ const DeleteInventoryModal = ({
   deleteItem,
   setInventoryList,
 }) => {
+
+  // const nav = useNavigate()
+
   const deleteInventoryItem = (id) => {
     axios
       .delete(`http://localhost:8080/api/inventories/${id}`)
       .then((_res) => {
-        setModal(false);
+
         const updatedList = inventoryList.filter((item) => item.id !== id);
         setInventoryList(updatedList);
+        // nav("/inventory");
+           setModal(false);
+          window.location.reload()
+
       })
       .catch((err) => console.log(err));
   };
@@ -50,6 +57,7 @@ const DeleteInventoryModal = ({
             <button
               onClick={() => {
                 deleteInventoryItem(deleteItem.id);
+                window.location.reload(false);
               }}
               className="delete-modal__delete-button">
               Delete

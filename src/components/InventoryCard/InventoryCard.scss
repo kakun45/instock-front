@@ -13,6 +13,10 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   justify-content: center;
 }
 
+button{
+  background-color: white;
+}
+
 .inventory {
 
   &__product-container {
@@ -52,9 +56,9 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     gap: 1.5rem;
      padding-left: 1rem;
     background-color: white;
+
     //  border: .01rem solid black;
   }
-
   &__product-container--tablet {
     display: none;
     @media (min-width: 768px) {
@@ -153,11 +157,11 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   &__product-container--tablet {
     display: none;
     @media (min-width: 768px) {
-      background-color: white;
-      width: 100%;
+      width: 95%;
       height: 3rem;
       display: inline-block;
       margin-top: 1rem;
+      margin-left: 2.5%;
     }
   }
 
@@ -185,9 +189,17 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
     flex: 1 1;
   }
 
+
 // &__icons-container{
 
 // }
+
+&__item-text{
+  @media (min-width: 768px){
+  margin-left: 1rem;
+  }
+
+}
 
 &__icons-trash{
   padding-top: 5rem;
