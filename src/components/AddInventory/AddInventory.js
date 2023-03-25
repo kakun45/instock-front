@@ -1,22 +1,22 @@
 /** @format */
-
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import { v4 as uuid } from "uuid";
 import "./AddInventory.scss";
 
 function AddInventory() {
+
+  const id = uuid();
   const [formData, setFormData] = useState({
-    warehouse_id: "",
     item_name: "",
     description: "",
     category: "",
     status: "",
     quantity: "",
-    warehouse_name: "",
+    warehouse_id: "",
   });
 
   const [warehouseData, setWarehouseData] = useState([]);
@@ -28,10 +28,21 @@ function AddInventory() {
   }, []);
 
   const handleChange = (event) => {
-    console.dir(event.target);
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
+    // console.dir(event.target);
+    setFormData( { ...formData , [event.target.name]: event.target.value } );
   };
+
+
+
+const addInventory = (e) => {
+e.preventDefault()
+  console.log(formData)
+  axios
+    .post(`http://localhost:8080/api/inventories`, formData)
+    .then( (res) => console.log(res) )
+    .catch( (err) => console.log(err) );
+}
+
 
   return (
     <div className="add-inventory__component">
@@ -41,7 +52,8 @@ function AddInventory() {
       <div className="add-inventory__main-content">
       
         {/* ////LEFT SIDE//// */}
-        <form className="inventory-form">
+        <form className="inventory-form"
+        onSubmit={ addInventory } >
           <div className="inventory-form__form-wrapper">
             <div className="add-inventory__left-side">
               <h3 className="add-inventory__header">Item Details</h3>
@@ -68,6 +80,11 @@ function AddInventory() {
                 name="category"
                 onChange={handleChange}>
                 <option value="Please select">Please select</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Gear">Gear</option>
+                <option value="Apparel">Apparel</option>
+                <option value="Health">Health</option>
+                <option value="Accessories">Accessories</option>
               </select>
             </div>
 
@@ -119,14 +136,13 @@ function AddInventory() {
               <select
                 className="inventory-form__input"
                 placeholder="Please select"
-                name="status"
-                value={formData.category}
+                name="warehouse_id"
                 onChange={handleChange}>
-                {warehouseData.map((warehouse) => {
+                { warehouseData.map( (warehouse) => {
+                  console.log(warehouseData)
                   return (
                     <option
-                      name="warehouse_name"
-                      value={formData.category}
+                      value={warehouse.id}
                       onChange={handleChange}>
                       {warehouse.warehouse_name}
                     </option>
@@ -136,9 +152,13 @@ function AddInventory() {
             </div>
           </div>
           <div className="button-wrapper">
-            <Button text="Cancel" emphasis="low-emphasis" type="button" />
+            <Button text="Cancel" emphasis="low-emphasis" type="button"/>
 
-            <Button text="Add Item" emphasis="high-emphasis" type="button" />
+            <Button
+              text="Add Item"
+              emphasis="high-emphasis"
+              type="submit"
+            />
           </div>
         </div>
       </div>
