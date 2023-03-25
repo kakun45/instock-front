@@ -1,7 +1,6 @@
 /** @format */
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/variables";
-$searchIcon: url("../../assets/icons/search-24px.svg");
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .page {
   //border: 0.01rem solid black;
@@ -18,7 +17,6 @@ button{
 }
 
 .inventory {
-
   &__product-container {
     width: 100%;
     height: 16rem;
@@ -54,12 +52,10 @@ button{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-     padding-left: 1rem;
-    background-color: white;
+    padding-left: 1rem;
+     background-color: white;
 
 
-
-    //  border: .01rem solid black;
   }
   &__product-container--tablet {
     display: none;
@@ -107,7 +103,6 @@ button{
   // &__catagory{
   // }
 
-
   // &__quantity-text{
   //     margin-top: 2rem;
   // }
@@ -135,10 +130,10 @@ button{
   }
 
   &__status-text--green {
-        color: #158463;
+    color: #158463;
   }
-   &__status-text--red {
-        color: red;
+  &__status-text--red {
+    color: red;
   }
 
   &__item-container--tablet {
@@ -191,24 +186,12 @@ button{
     flex: 1 1;
   }
 
-
-// &__icons-container{
-
-// }
-
-&__item-text{
-  @media (min-width: 768px){
-  margin-left: 1rem;
-  }
-
-}
-
-&__icons-trash{
-  padding-top: 5rem;
-  background-color: white;
-    @media (min-width:768px){
-        padding: 0;
-        margin-right: 1rem;
+  &__icons-trash {
+    padding-top: 5rem;
+    background-color: #f7f8f9;
+    @media (min-width: 768px) {
+      margin-right: 1rem;
+      padding: 0;
 
     }
   }
@@ -218,5 +201,4 @@ button{
       margin-left: 1rem;
     }
   }
-
 }

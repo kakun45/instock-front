@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./WarehouseList.scss";
+import SearchBar from "../SearchBar/SearchBar";
 
 function WarehouseList() {
   const API_URI = process.env.REACT_APP_API_URI;
@@ -13,7 +14,6 @@ function WarehouseList() {
     axios
       .get(`${API_URI}/api/warehouses`)
       .then((res) => {
-        console.log(res.data);
         setWarehouseList(res.data);
       })
       .catch((err) => console.log(err));
@@ -21,6 +21,7 @@ function WarehouseList() {
 
   return (
     <div className="warehouse-list__component">
+      <SearchBar title="Warehouses" path="warehouses" />
       <div className="warehouse-list__table-row warehouse-list__table-row--t-show">
         <div className="warehouse-list__header-box warehouse-list__header-box--left">
           <h4 className="warehouse-list__table-header">
