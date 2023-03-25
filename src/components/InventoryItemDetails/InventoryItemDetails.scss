@@ -66,17 +66,30 @@
     }
   }
 
-  &__instock-label {
-    @include m-table-header($accent-positive-color);
-    background-color: rgba($accent-positive-color, 7%);
+  &__status-label {
     display: inline-block;
     padding: 0.25rem 0.5rem;
     margin: 0;
     border-radius: 0.75rem;
 
-    @include tablet {
-      @include t-table-header($accent-positive-color);
-      margin: 0;
+    &--in-stock {
+      @include m-table-header($accent-positive-color);
+      background-color: rgba($accent-positive-color, 7%);
+
+      @include tablet {
+        @include t-table-header($accent-positive-color);
+        margin: 0;
+      }
+    }
+
+    &--out-of-stock {
+      @include m-table-header($accent-negative-color);
+      background-color: rgba($accent-negative-color, 7%);
+
+      @include tablet {
+        @include t-table-header($accent-negative-color);
+        margin: 0;
+      }
     }
   }
 
