@@ -1,24 +1,9 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-import "./WarehouseList.scss";
 import SearchBar from "../SearchBar/SearchBar";
+import "./WarehouseList.scss";
 
-function WarehouseList() {
-  const API_URI = process.env.REACT_APP_API_URI;
-
-  const [warehouseList, setWarehouseList] = useState();
-
-  useEffect(() => {
-    axios
-      .get(`${API_URI}/api/warehouses`)
-      .then((res) => {
-        setWarehouseList(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
+function WarehouseList({ warehouseList, setModal, setDeleteWarehouse }) {
   return (
     <div className="warehouse-list__component">
       <SearchBar title="Warehouses" path="warehouses" />
@@ -70,7 +55,12 @@ function WarehouseList() {
       </div>
       {warehouseList &&
         warehouseList.map((warehouse) => (
-          <WarehouseItem key={warehouse.id} warehouse={warehouse} />
+          <WarehouseItem
+            key={warehouse.id}
+            warehouse={warehouse}
+            setModal={setModal}
+            setDeleteWarehouse={setDeleteWarehouse}
+          />
         ))}
     </div>
   );
