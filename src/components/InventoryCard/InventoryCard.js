@@ -1,6 +1,6 @@
 /** @format */
 import React from "react";
-import "../InventoryList/InventoryList.scss";
+import "./InventoryCard.scss";
 import trashcanIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";

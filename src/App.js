@@ -9,7 +9,13 @@ import Warehouse from "./pages/Warehouse/Warehouse";
 import EditInventory from "./components/EditInventory/EditInventory";
 import AddInventory from "./components/AddInventory/AddInventory";
 import Inventory from "./pages/Inventory/Inventory";
+<<<<<<< HEAD
+import WarehouseItem from "./components/WarehouseItem/WarehouseItem";
+
+// import InventoryList from "./components/InventoryList/InventoryList";
+=======
 import "./App.scss";
+>>>>>>> develop-front
 
 function App() {
   return (
