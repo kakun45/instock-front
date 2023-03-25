@@ -1,7 +1,6 @@
 /** @format */
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/variables";
-$searchIcon: url("../../assets/icons/search-24px.svg");
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .page {
   //border: 0.01rem solid black;
@@ -14,87 +13,6 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
 }
 
 .inventory {
-  &__search-container {
-    margin-top: 1rem;
-    width: 100%;
-    height: fit-content;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // border-bottom: 0.01rem solid black;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 95%;
-      padding-bottom: 1rem;
-      border: none;
-    }
-  }
-
-  &__header {
-    align-self: flex-start;
-    margin-left: 3rem;
-    margin-bottom: 1rem;
-    font-size: 1.75rem;
-
-    @media (min-width: 768px) {
-      margin: auto 1rem;
-    }
-  }
-
-  &__search-inner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    width: 100%;
-    height: fit-content;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-      align-items: center;
-      width: 18rem;
-      justify-content: space-between;
-    }
-  }
-
-  &__search-bar {
-    width: 18rem;
-    border-radius: 20px;
-    height: 1.5rem;
-    font-size: 0.75rem;
-    padding-left: 1rem;
-    background-image: $searchIcon;
-    background-repeat: no-repeat;
-    background-position: 95% center;
-    border: #bdc5d5;
-
-    @media (min-width: 768px) {
-      width: 8rem;
-    }
-  }
-
-  &__search-button {
-    width: 18.5rem;
-    border-radius: 20px;
-    margin-top: 1rem;
-    height: 2rem;
-    margin-bottom: 1rem;
-    background-color: #2e66e6;
-    color: white;
-    border: none;
-    @media (min-width: 768px) {
-      margin-top: 0;
-      margin-bottom: 0rem;
-      width: 8rem;
-    }
-  }
-
   &__product-container {
     width: 100%;
     height: 16rem;
