@@ -1,31 +1,29 @@
-/** @format */
 import React from "react";
 import "./InventoryList.scss";
-import SearchBar from "../SearchBar/SearchBar";
 import arrowDrop from "../../assets/icons/sort-24px.svg";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useEffect } from "react";
 import { InventoryCard } from "../InventoryCard/InventoryCard";
 const API_URI = process.env.REACT_APP_API_URI;
 
-export const InventoryList = ({
+export const WarehouseInventoryList = ({
   setModal,
   setDeleteItem,
-  inventoryList,
-  setInventoryList,
+  warehouseInventoryList,
+  setWarehouseInventoryList,
 }) => {
-  const { inventoryId } = useParams();
-
+  const { warehouseId } = useParams();
+  // Alternatively it works either way: in here or in WarehouseDetails, keep one, which is lower possible level. For now it's inside in here, move up if needed
   useEffect(() => {
     axios
-      .get(`${API_URI}/api/inventories`)
+      .get(`${API_URI}/api/warehouses/${warehouseId}/inventories`)
       .then((res) => {
-        setInventoryList(res.data);
+        setWarehouseInventoryList(res.data);
       })
 
       .catch((err) => console.log(err));
-  }, [ inventoryId]);
+  }, [API_URI, warehouseId]);
 
   return (
     <>
@@ -44,23 +42,22 @@ export const InventoryList = ({
             <p>QTY</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>WAREHOUSE</p> <img src={arrowDrop} alt="arrow drop"></img>
-          </div>
-          <div className="inventory__sort-icon">
             <p>ACTIONS</p> <img src={arrowDrop} alt="arrow drop"></img>
           </div>
         </div>
       </div>
-      {inventoryList.map((item) => {
-        return (
-          <InventoryCard
-            key={item.id}
-            item={item}
-            setModal={setModal}
-            setDeleteItem={setDeleteItem}
-          />
-        );
-      })}
+      {warehouseInventoryList &&
+        warehouseInventoryList.map((item) => {
+          return (
+            <InventoryCard
+              key={item.id}
+              item={item}
+              // quantity={quantity} // TODO need to add this field
+              setModal={setModal}
+              setDeleteItem={setDeleteItem}
+            />
+          );
+        })}
     </>
   );
 };

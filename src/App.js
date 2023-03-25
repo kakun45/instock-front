@@ -37,7 +37,7 @@ function App() {
         {/* TODO use the inventory list component to display the inventory for a specific warehouse: */}
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

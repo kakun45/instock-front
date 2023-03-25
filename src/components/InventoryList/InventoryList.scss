@@ -20,7 +20,6 @@
     border-top: 0.01rem solid #bdc5d5;
     display: flex;
     margin: 0 auto;
-    padding-left: 2rem;
 
     @media (min-width: 768px) {
       display: none;
@@ -30,21 +29,24 @@
   &__item-container {
     width: 50%;
     height: 14rem;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 1.5rem;
+    padding-left: 1rem;
+
     // border: .01rem solid black;
   }
 
   &__status-container {
     width: 50%;
     height: 14rem;
-    padding-left: 1rem;
+    // padding-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-top: 0.5rem;
+    gap: 1.5rem;
+    padding-left: 1rem;
+
     //  border: .01rem solid black;
   }
 
@@ -92,9 +94,9 @@
   // &__catagory{
   // }
 
-  &__quantity-text {
-    margin-top: 2rem;
-  }
+  // &__quantity-text{
+  //     margin-top: 2rem;
+  // }
 
   &__chevron-container {
     display: flex;
@@ -109,7 +111,6 @@
     border-radius: 20rem;
     width: 6rem;
     height: min-content;
-    color: #158463;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,8 +120,12 @@
     }
   }
 
-  //   &__status-text {
-  //   }
+  &__status-text--green {
+    color: #158463;
+  }
+  &__status-text--red {
+    color: red;
+  }
 
   &__item-container--tablet {
     display: none;
@@ -169,50 +174,16 @@
   }
 
   &__icons-trash {
+    padding-top: 5rem;
+    background-color: #f7f8f9;
     @media (min-width: 768px) {
       margin-right: 1rem;
+      padding: 0;
     }
   }
 
   &__icons-edit {
     @media (min-width: 768px) {
-    }
-  }
-
-  // .inventory__items{
-  //         border: .01rem solid black;
-  // }
-  // .inventory__catagory{
-  //         border: .01rem solid black;
-  // }
-
-  // .inventory__status{
-  // }
-
-  // .inventory__quantities{
-  //         border: .01rem solid black;
-  // }
-
-  // .inventory__warehouses{
-  //         border: .01rem solid black;
-  // }
-
-  // .inventory__icons{
-  //         border: .01rem solid black;
-  // }
-
-  .out_stock {
-    background-color: #bdc5d5;
-    border-radius: 20rem;
-    width: fit-content;
-    height: min-content;
-    color: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (min-width: 768px) {
-      width: 6rem;
     }
   }
 }
