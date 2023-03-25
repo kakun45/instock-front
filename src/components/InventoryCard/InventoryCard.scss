@@ -4,7 +4,6 @@
 $searchIcon: url("../../assets/icons/search-24px.svg");
 
 .page {
-  //border: 0.01rem solid black;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -13,21 +12,19 @@ $searchIcon: url("../../assets/icons/search-24px.svg");
   justify-content: center;
 }
 
-button{
+button {
   background-color: white;
 }
 
 .inventory {
-
   &__product-container {
     width: 100%;
-    height: 16rem;
+    height: 14rem;
     border-bottom: 0.01rem solid #bdc5d5;
     border-top: 0.01rem solid #bdc5d5;
     display: flex;
     margin: 0 auto;
     background-color: white;
-
 
     @media (min-width: 768px) {
       display: none;
@@ -37,27 +34,22 @@ button{
   &__item-container {
     width: 50%;
     height: 14rem;
-    // padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1rem;
+    background-color: white;
+  }
+
+  &__status-container {
+    width: 50%;
+    height: 14rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding-left: 1rem;
     background-color: white;
 
-    // border: .01rem solid black;
-  }
-
-  &__status-container {
-    width: 50%;
-    height: 14rem;
-    // padding-left: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-     padding-left: 1rem;
-    background-color: white;
-
-    //  border: .01rem solid black;
   }
   &__product-container--tablet {
     display: none;
@@ -66,8 +58,7 @@ button{
       height: 3rem;
       display: inline-block;
       margin-top: 1rem;
-      background-color: #D1D1D1;
-
+      background-color: #d1d1d1;
     }
   }
 
@@ -77,7 +68,6 @@ button{
       height: 2.5rem;
       margin: 0 auto;
       display: flex;
-      //  justify-content: space-around;
       align-items: center;
       margin-bottom: 1rem;
       background-color: #f7f8f9;
@@ -95,20 +85,11 @@ button{
   &__sort-icon {
     display: flex;
   }
-  // &__icon-edit{
-  // }
 
   &__item-text {
     color: blue;
   }
 
-  // &__catagory{
-  // }
-
-
-  // &__quantity-text{
-  //     margin-top: 2rem;
-  // }
 
   &__chevron-container {
     display: flex;
@@ -133,10 +114,10 @@ button{
   }
 
   &__status-text--green {
-        color: #158463;
+    color: #158463;
   }
-   &__status-text--red {
-        color: red;
+  &__status-text--red {
+    color: red;
   }
 
   &__item-container--tablet {
@@ -150,7 +131,6 @@ button{
       width: 95%;
       margin: 0 auto;
       background-color: white;
-
     }
   }
 
@@ -189,32 +169,47 @@ button{
     flex: 1 1;
   }
 
-
-// &__icons-container{
-
-// }
-
-&__item-text{
-  @media (min-width: 768px){
-  margin-left: 1rem;
+  &__items {
+    font-size: 0.75rem;
+  }
+  &__catagory {
+    font-size: 0.75rem;
   }
 
-}
-
-&__icons-trash{
-  padding-top: 5rem;
-  background-color: white;
-    @media (min-width:768px){
-        padding: 0;
-        margin-right: 1rem;
-
-    }
+  &__status {
+    font-size: 0.75rem;
   }
-  &__icons-edit {
-    background-color: white;
+
+  &__quantities {
+    font-size: 0.75rem;
+  }
+
+  &__warehouses {
+    font-size: 0.75rem;
+  }
+
+
+  &__item-text {
     @media (min-width: 768px) {
       margin-left: 1rem;
     }
   }
 
+  &__icons-trash {
+    padding-top: 4rem;
+    background-color: white;
+    @media (min-width: 768px) {
+      padding: 0;
+      margin-right: 1rem;
+    }
+  }
+  &__icons-edit {
+    background-color: white;
+    display: flex;
+    justify-content: end;
+    width: 90%;
+    @media (min-width: 768px) {
+      margin-left: 1rem;
+    }
+  }
 }
