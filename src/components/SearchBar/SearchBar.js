@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "../SearchBar/SearchBar.scss";
 
+
 const SearchBar = ({ title, path }) => {
   return (
     <div className="searchbar">
@@ -24,6 +25,7 @@ const SearchBar = ({ title, path }) => {
             type="button"
           />
         </Link>
+
       </div>
     </div>
   );
