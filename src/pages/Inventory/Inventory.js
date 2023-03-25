@@ -12,7 +12,7 @@ const Inventory = () => {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar title="Inventory" path="inventory" />
       {modal ? (
         <DeleteModal
           setModal={setModal}

@@ -4,8 +4,14 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import chevronIcon from "../../assets/icons/chevron_right-24px.svg";
 import "./WarehouseItem.scss";
 
-function WarehouseItem({ warehouse }) {
-  console.log(warehouse);
+function WarehouseItem({ warehouse, setModal, setDeleteWarehouse }) {
+  const handleDeleteModal = (e) => {
+    e.preventDefault();
+
+    setModal(true);
+    setDeleteWarehouse(warehouse);
+  };
+
   return (
     <div className="warehouse-item__component">
       <div className="warehouse-item__left-side">
@@ -29,7 +35,7 @@ function WarehouseItem({ warehouse }) {
           <h4 className="warehouse-item__table-header  warehouse-item__table-header--t-hidden">
             ADDRESS
           </h4>
-          <p className="warehouse-item__body-medium">{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</p>
+          <p className="warehouse-item__body-medium warehouse-item__body-medium--address">{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</p>
         </div>
       </div>
       <div className="warehouse-item__right-side">
@@ -54,13 +60,12 @@ function WarehouseItem({ warehouse }) {
         </div>
       </div>
       <div className="warehouse-item__icons-box">
-        <Link to={`/warehouses/${warehouse.id}/delete`}>
-          <img
-            className="warehouse-item__icon"
-            src={deleteIcon}
-            alt="delete icon"
-          />
-        </Link>
+        <img
+          className="warehouse-item__icon"
+          src={deleteIcon}
+          alt="delete icon"
+          onClick={(e) => handleDeleteModal(e)}
+        />
         <Link to={`/warehouses/${warehouse.id}/edit`}>
           <img
             className="warehouse-item__icon"

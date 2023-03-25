@@ -1,5 +1,4 @@
 /** @format */
-
 import React from "react";
 import "../InventoryList/InventoryList.scss";
 import trashcanIcon from "../../assets/icons/delete_outline-24px.svg";
@@ -7,6 +6,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import arrowDrop from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
+
 
 export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
   const {
@@ -62,11 +62,10 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             <div className="inventory__status-active-container">
               <p
                 className={
-                  status === "Out of Stock"
-                    ? "out_stock"
-                    : "inventory__status-text"
-                }
-              >{`${status}`}</p>
+                  status === "In Stock"
+                    ? "inventory__status-text--green"
+                    : "inventory__status-text--red"
+                }>{`${status}`}</p>
             </div>
           </div>
 
@@ -80,7 +79,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             <p>{`${warehouse_name}`}</p>
           </div>
 
-          <div className="inventory__icons">
+          <div className="inventory__icons-edit">
             <Link to={`/${id}/edit`}>
               <img
                 src={editIcon}
@@ -103,15 +102,14 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
         <div>
           <p
             className={
-              status === "Out of Stock"
-                ? "out_stock  inventory__status-active-container"
-                : "inventory__status-text inventory__status-active-container"
-            }
-          >{`${status}`}</p>
+              status === "In Stock"
+                ? "inventory__status-text--green inventory__status-active-container"
+                : "inventory__status-text--red inventory__status-active-container"
+            }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
         <p>{`${warehouse_name}`}</p>
-        <span>
+        <span className="inventory__icon-container" >
           <button
             onClick={() => {
               setModal(true);
@@ -125,13 +123,13 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             ></img>
           </button>
           <Link to={`/inventory/${id}/edit`}>
-            <button>
+            {/* <button> */}
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
                 alt="pencil edit icon"
               ></img>
-            </button>
+            {/* </button> */}
           </Link>
         </span>
       </div>
