@@ -18,6 +18,8 @@
   }
 
   &__left-side {
+    flex: 1;
+
     @include tablet {
       display: flex;
       align-items: center;
@@ -26,6 +28,8 @@
   }
 
   &__right-side {
+    flex: 1;
+
     @include tablet {
       display: flex;
       align-items: center;
