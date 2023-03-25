@@ -95,9 +95,11 @@ function AddInventory() {
                 className="inventory-form__radio-input"
                 type="radio"
                 name="status"
-                value={formData.status}
+                label="In Stock"
+                value={"In Stock"}
                 onChange={handleChange}
               />
+
               <label className="inventory-form__radio-label" htmlFor="inStock">
                 In stock
               </label>
@@ -105,7 +107,8 @@ function AddInventory() {
                 className="inventory-form__radio-input"
                 type="radio"
                 name="status"
-                value={formData.status}
+                label="Out of Stock"
+                value={"Out of Stock"}
                 onChange={handleChange}
               />
               <label
@@ -149,7 +152,6 @@ function AddInventory() {
           </div>
           <div className="button-wrapper">
             <Button text="Cancel" emphasis="low-emphasis" type="button" />
-
             <Button text="Add Item" emphasis="high-emphasis" type="submit" />
           </div>
         </form>
