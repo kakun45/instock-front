@@ -25,9 +25,10 @@ function InventoryItemDetails() {
       <NavHeader title={inventoryItem.item_name} path="/inventory">
         <Button
           icon={editIcon}
-          text="EDIT" // TODO On mobile, hide text
+          text="Edit"
           emphasis="high-emphasis"
           type="button"
+          mHidden="mHidden"
         />
       </NavHeader>
       <div className="item-details__main-content">

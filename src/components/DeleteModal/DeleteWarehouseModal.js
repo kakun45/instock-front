@@ -1,5 +1,6 @@
 import axios from "axios";
 import X from "../../assets/icons/close-24px.svg";
+import Button from "../Button/Button";
 import "./DeleteModal.scss";
 
 const DeleteWarehouseModal = ({
@@ -7,7 +8,7 @@ const DeleteWarehouseModal = ({
   deleteWarehouse,
   setWarehouseList,
 }) => {
-  const deleteInventoryItem = (id) => {
+  const handleDeleteWarehouse = (id) => {
     axios
       .delete(`http://localhost:8080/api/warehouses/${deleteWarehouse.id}`)
       .then((res) => {
@@ -23,9 +24,14 @@ const DeleteWarehouseModal = ({
     <>
       <div className="delete-modal__overlay">
         <div className="delete-modal__container">
-          <button onClick={() => setModal(false)}>
-            <img src={X} className="delete-modal__X"></img>
-          </button>
+          <div className="delete-modal__X">
+            <Button
+              icon={X}
+              emphasis=""
+              type="button"
+              handleOnClick={() => setModal(false)}
+            />
+          </div>
           <div className="delete-modal__header-container">
             <h1 className="delete-modal__header">{`Delete ${deleteWarehouse.warehouse_name} warehouse?`}</h1>
           </div>
@@ -35,20 +41,20 @@ const DeleteWarehouseModal = ({
             </p>
           </div>
           <div className="delete-modal__button-container">
-            <button
-              onClick={() => setModal(false)}
-              className="delete-modal__cancel-button"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={() => {
-                deleteInventoryItem(deleteWarehouse.id);
+            <Button
+              text="Cancel"
+              type="button"
+              emphasis="low-emphasis"
+              handleOnClick={() => setModal(false)}
+            />
+            <Button
+              text="Delete"
+              type="button"
+              emphasis="dangerous-emphasis"
+              handleOnClick={() => {
+                handleDeleteWarehouse(deleteWarehouse.id);
               }}
-              className="delete-modal__delete-button"
-            >
-              Delete
-            </button>
+            />
           </div>
         </div>
       </div>
