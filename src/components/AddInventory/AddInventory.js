@@ -46,10 +46,11 @@ e.preventDefault()
 
   return (
     <div className="add-inventory__component">
-      <NavHeader title="Add New Inventory Item" path="/inventory">
+      <NavHeader title="Add New inventory" path="/inventory">
         <></>
       </NavHeader>
       <div className="add-inventory__main-content">
+      
         {/* ////LEFT SIDE//// */}
         <form className="inventory-form"
         onSubmit={ addInventory } >
@@ -159,7 +160,7 @@ e.preventDefault()
               type="submit"
             />
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
