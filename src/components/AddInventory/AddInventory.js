@@ -6,8 +6,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import "./AddInventory.scss";
+import { useNavigate } from 'react-router-dom'
 
 function AddInventory() {
+
+const navigate = useNavigate()
+
   const id = uuid();
   const [formData, setFormData] = useState({
     item_name: "",
@@ -31,14 +35,21 @@ function AddInventory() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const addInventory = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    axios
-      .post(`http://localhost:8080/api/inventories`, formData)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
+
+
+const addInventory = (e) => {
+e.preventDefault()
+  console.log(formData)
+  axios
+    .post(`http://localhost:8080/api/inventories`, formData)
+    .then( (res) => {
+       console.log(res.data);
+        setFormData({});
+      navigate(`/inventory`);
+
+  } )
+    .catch( (err) => console.log(err) );
+}
 
   return (
     <div className="add-inventory__component">
