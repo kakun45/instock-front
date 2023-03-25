@@ -14,9 +14,10 @@
 }
 .navigation {
   &__logo {
-    height: 1.056rem;
-    width: 5.613rem;
-    margin-bottom: 1rem;
+    height: auto;
+    width: auto;
+    object-fit: fill;
+
     @include tablet {
       margin-right: 15rem;
       @include desktop {
@@ -27,7 +28,8 @@
 
   &__list {
     list-style-type: none;
-    text-decoration: none;
+    margin-top: 0.5rem;
+
     text-align: center;
     color: white;
     display: flex;
@@ -39,5 +41,20 @@
     margin: 0 2.5rem 0 2.5rem;
     width: 100%;
     border-radius: 0.3rem;
+  }
+
+  &__item {
+    @include m-link($primary-light-color);
+  }
+  &__item--active {
+    background-color: #13182c;
+    border: solid 1px;
+    border-radius: 20px;
+    width: 170%;
+    height: 2rem;
+    border-color: transparent;
+  }
+  &__item:hover {
+    text-decoration: underline;
   }
 }
