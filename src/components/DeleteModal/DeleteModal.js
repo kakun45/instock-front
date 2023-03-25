@@ -1,9 +1,8 @@
 /** @format */
-import React from "react";
-import "./DeleteModal.scss";
 import axios from "axios";
-import X from '../../assets/icons/close-24px.svg';
-// import { useNavigate } from "react-router-dom";
+import X from "../../assets/icons/close-24px.svg";
+import Button from "../Button/Button";
+import "./DeleteModal.scss";
 
 const DeleteInventoryModal = ({
   setModal,
@@ -11,20 +10,17 @@ const DeleteInventoryModal = ({
   deleteItem,
   setInventoryList,
 }) => {
-
   // const nav = useNavigate()
 
   const deleteInventoryItem = (id) => {
     axios
       .delete(`http://localhost:8080/api/inventories/${id}`)
       .then((_res) => {
-
         const updatedList = inventoryList.filter((item) => item.id !== id);
         setInventoryList(updatedList);
         // nav("/inventory");
-           setModal(false);
-          window.location.reload()
-
+        setModal(false);
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
@@ -32,13 +28,15 @@ const DeleteInventoryModal = ({
   return (
     <>
       <div className="delete-modal__overlay">
-
         <div className="delete-modal__container">
-          {/* <div className="delete-modal__X-container"> */}
-          <button onClick={() => setModal(false)}>
-            <img src={X} className="delete-modal__X"></img>
-          </button>
-          {/* </div> */}
+          <div className="delete-modal__X">
+            <Button
+              icon={X}
+              emphasis=""
+              type="button"
+              handleOnClick={() => setModal(false)}
+            />
+          </div>
           <div className="delete-modal__header-container">
             <h1 className="delete-modal__header">{`Delete ${deleteItem.item_name} Inventory Item`}</h1>
           </div>
@@ -49,19 +47,21 @@ const DeleteInventoryModal = ({
             </p>
           </div>
           <div className="delete-modal__button-container">
-            <button
-              onClick={() => setModal(false)}
-              className="delete-modal__cancel-button">
-              Cancel
-            </button>
-            <button
-              onClick={() => {
+            <Button
+              text="Cancel"
+              type="button"
+              emphasis="low-emphasis"
+              handleOnClick={() => setModal(false)}
+            />
+            <Button
+              text="Delete"
+              type="button"
+              emphasis="dangerous-emphasis"
+              handleOnClick={() => {
                 deleteInventoryItem(deleteItem.id);
                 window.location.reload(false);
               }}
-              className="delete-modal__delete-button">
-              Delete
-            </button>
+            />
           </div>
         </div>
       </div>

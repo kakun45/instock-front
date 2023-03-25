@@ -41,12 +41,14 @@ const WarehouseDetails = () => {
     <div>
       <NavHeader
         title={warehouseObj.warehouse_name} // get it out from a res in State
-        path="/warehouses">
+        path="/warehouses"
+      >
         <Button
-          // TODO text={window.screen.width < 768 ? "" : "Edit"}, if mobile hide the text
+          text="Edit"
+          mHidden="mHidden"
           icon={icon}
-          emphasis={"high-emphasis"}
-          type={"button"}
+          emphasis="high-emphasis"
+          type="button"
           handleOnClick={handleOnClick}
         />
       </NavHeader>
