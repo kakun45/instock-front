@@ -9,6 +9,7 @@ import Warehouse from "./pages/Warehouse/Warehouse";
 import EditInventory from "./components/EditInventory/EditInventory";
 import AddInventory from "./components/AddInventory/AddInventory";
 import Inventory from "./pages/Inventory/Inventory";
+import "./App.scss";
 
 function App() {
   return (
