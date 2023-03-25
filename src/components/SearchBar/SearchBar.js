@@ -1,28 +1,31 @@
 /** @format */
 
 import React from "react";
-import "../InventoryList/InventoryList.scss";
-import "./SearchBar.scss";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+import "../SearchBar/SearchBar.scss";
 
 
-
-
-const SearchBar = () => {
+const SearchBar = ({ title, path }) => {
   return (
-    <div className="page">
-      <div className="inventory__search-container">
-        <h2 className="inventory__header">Inventory</h2>
-        <div className="inventory__search-inner-container">
+    <div className="searchbar">
+      <h2 className="searchbar__page-header">{title}</h2>
+      <div className="searchbar__input-button-box">
+        <form className="searchbar__form">
           <input
-            className="inventory__search-bar"
+            className="searchbar__input"
             type="text"
             placeholder="Search..."
           />
-          <Link to='/inventory/add' >
-            <button className="inventory__search-button">+ Add New Item</button>
-          </Link>
-        </div>
+        </form>
+        <Link to={`/${path}/add`}>
+          <Button
+            text="+ Add New Item"
+            emphasis="high-emphasis"
+            type="button"
+          />
+        </Link>
+
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 /** @format */
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/variables";
-$searchIcon: url("../../assets/icons/search-24px.svg");
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .page {
   //border: 0.01rem solid black;
