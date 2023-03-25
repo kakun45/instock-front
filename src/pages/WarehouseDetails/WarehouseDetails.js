@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import icon from "../../assets/icons/edit-24px.png";
 import Button from "../../components/Button/Button";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
@@ -11,6 +11,7 @@ const API_URI = process.env.REACT_APP_API_URI;
 
 const WarehouseDetails = () => {
   const { warehouseId } = useParams();
+  const navigate = useNavigate();
   const [warehouseObj, setwarehouseObj] = useState({});
 
   const [modal, setModal] = useState(false);
@@ -27,14 +28,14 @@ const WarehouseDetails = () => {
       .catch((err) => console.error(err));
   }, [API_URI, warehouseId]);
 
-  const handleOnClick = () => {};
+  const handleNavigation = () => navigate(`/warehouses/${warehouseId}/edit`);
 
   return (
     <div className="warehouse-details-page">
       <div className="warehouse-details-body">
         <NavHeader
           title={warehouseObj.warehouse_name} // get it out from a res in State
-          path="/warehouses"
+          path={"/warehouses"}
         >
           <Button
             text="Edit"
@@ -42,7 +43,7 @@ const WarehouseDetails = () => {
             icon={icon}
             emphasis="high-emphasis"
             type="button"
-            handleOnClick={handleOnClick}
+            handleOnClick={handleNavigation}
           />
         </NavHeader>
         <section className="warehouse-info">
