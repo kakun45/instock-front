@@ -41,6 +41,9 @@
     display: flex;
     justify-content: center;
     font-size: 0.8rem;
+    @include desktop {
+      align-items: center;
+    }
   }
   &__item-wrapper {
     width: 100%;
@@ -49,14 +52,19 @@
 
   &__item {
     @include m-link($primary-light-color);
+    text-decoration: none;
+    display: block;
   }
   &__item--active {
     background-color: #13182c;
     border: solid 1px;
     border-radius: 20px;
-    width: 140%;
-
+    width: 110%;
+    display: block;
     border-color: transparent;
+    @include m-link($primary-light-color);
+    padding: 0.3rem;
+    text-decoration: none;
   }
   &__item:hover {
     text-decoration: underline;

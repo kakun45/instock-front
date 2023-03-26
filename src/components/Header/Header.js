@@ -15,12 +15,10 @@ function Header() {
                 className={({ isActive }) =>
                   isActive
                     ? "navigation__item navigation__item--active"
-                    : "nagivation__item"
+                    : "navigation__item"
                 }
               >
-                <li className="navigation__item navigation__item--active">
-                  Warehouses
-                </li>
+                Warehouses
               </NavLink>
             </div>
 
@@ -30,10 +28,10 @@ function Header() {
                 className={({ isActive }) =>
                   isActive
                     ? "navigation__item navigation__item--active"
-                    : "nagivation__item"
+                    : "navigation__item"
                 }
               >
-                <li className="navigation__item">Inventory</li>
+                Inventory
               </NavLink>
             </div>
           </ul>
