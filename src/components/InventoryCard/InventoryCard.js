@@ -7,7 +7,6 @@ import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import arrowDrop from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
-
 export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
   const {
     id,
@@ -65,7 +64,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
                   status === "In Stock"
                     ? "inventory__status-text--green"
                     : "inventory__status-text--red"
-                }>{`${status}`}</p>
+                }
+              >{`${status}`}</p>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
           </div>
 
           <div className="inventory__icons-edit">
-            <Link to={`/${id}/edit`}>
+            <Link to={`/inventory/${id}/edit`}>
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
@@ -105,11 +105,12 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               status === "In Stock"
                 ? "inventory__status-text--green inventory__status-active-container"
                 : "inventory__status-text--red inventory__status-active-container"
-            }>{`${status}`}</p>
+            }
+          >{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
         <p>{`${warehouse_name}`}</p>
-        <span className="inventory__icon-container" >
+        <span className="inventory__icon-container">
           <button
             onClick={() => {
               setModal(true);
@@ -124,11 +125,11 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
           </button>
           <Link to={`/inventory/${id}/edit`}>
             {/* <button> */}
-              <img
-                src={editIcon}
-                className="inventory_icons-edit"
-                alt="pencil edit icon"
-              ></img>
+            <img
+              src={editIcon}
+              className="inventory_icons-edit"
+              alt="pencil edit icon"
+            ></img>
             {/* </button> */}
           </Link>
         </span>

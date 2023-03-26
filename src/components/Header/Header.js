@@ -10,7 +10,14 @@ function Header() {
         <div>
           <ul className="navigation__list">
             <div className="navigation__item-wrapper">
-              <NavLink to="/warehouses">
+              <NavLink
+                to="/warehouses"
+                className={({ isActive }) =>
+                  isActive
+                    ? "navigation__item navigation__item--active"
+                    : "nagivation__item"
+                }
+              >
                 <li className="navigation__item navigation__item--active">
                   Warehouses
                 </li>
@@ -18,7 +25,14 @@ function Header() {
             </div>
 
             <div className="navigation__item-wrapper">
-              <NavLink to="/inventory">
+              <NavLink
+                to="/inventory"
+                className={({ isActive }) =>
+                  isActive
+                    ? "navigation__item navigation__item--active"
+                    : "nagivation__item"
+                }
+              >
                 <li className="navigation__item">Inventory</li>
               </NavLink>
             </div>
