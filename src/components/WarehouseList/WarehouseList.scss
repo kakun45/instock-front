@@ -2,19 +2,21 @@
 @use "../../styles/partials/variables" as *;
 
 .warehouse-list {
-  &__component {
-    margin: 0 $m-margin-page-lateral;
-    box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+  // &__component {
+  //   margin: 0 $m-margin-page-lateral;
+  //   box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+  //   border-radius: 0.25rem;
+  //   overflow: hidden;
 
-    @include tablet {
-      margin: 0 $t-margin-page-lateral;
-    }
+  //   @include tablet {
+  //     margin: 0 $t-margin-page-lateral;
+  //   }
 
-    @include desktop {
-      width: $d-content-width;
-      margin: auto;
-    }
-  }
+  //   @include desktop {
+  //     width: $d-content-width;
+  //     margin: auto;
+  //   }
+  // }
 
   &__table-row {
     display: none;

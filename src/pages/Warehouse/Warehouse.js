@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import DeleteWarehouseModal from "../../components/DeleteModal/DeleteWarehouseModal";
+import "./Warehouse.scss";
 const API_URI = process.env.REACT_APP_API_URI;
 
 const Warehouse = () => {
@@ -19,20 +20,22 @@ const Warehouse = () => {
   }, []);
 
   return (
-    <>
-      {modal && (
-        <DeleteWarehouseModal
+    <div className="warehouse-page">
+      <div className="warehouse-body">
+        {modal && (
+          <DeleteWarehouseModal
+            setModal={setModal}
+            deleteWarehouse={deleteWarehouse}
+            setWarehouseList={setWarehouseList}
+          />
+        )}
+        <WarehouseList
+          warehouseList={warehouseList}
           setModal={setModal}
-          deleteWarehouse={deleteWarehouse}
-          setWarehouseList={setWarehouseList}
+          setDeleteWarehouse={setDeleteWarehouse}
         />
-      )}
-      <WarehouseList
-        warehouseList={warehouseList}
-        setModal={setModal}
-        setDeleteWarehouse={setDeleteWarehouse}
-      />
-    </>
+      </div>
+    </div>
   );
 };
 

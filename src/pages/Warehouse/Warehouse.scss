@@ -1,0 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse-body {
+  background-color: $primary-light-color;
+  margin: 0 $m-margin-page-lateral;
+  box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  @include tablet {
+    margin: 0 $t-margin-page-lateral;
+  }
+
+  @include desktop {
+    width: $d-content-width;
+    margin: 0 auto;
+  }
+}
