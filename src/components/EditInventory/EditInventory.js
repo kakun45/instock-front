@@ -1,15 +1,14 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
-
+import { useParams } from "react-router-dom";
 
 import "./EditInventory.scss";
 
 function EditInventory() {
-
-
+  const { itemId } = useParams();
   return (
     <div className="edit-inventory__component">
-      <NavHeader title="Edit Inventory Item" path="/inventory">
+      <NavHeader title="Edit Inventory Item" path={`/inventory/${itemId}`}>
         <></>
       </NavHeader>
       <div className="edit-inventory__main-content">
