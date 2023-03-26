@@ -1,5 +1,5 @@
 import React from "react";
-import "./InventoryList.scss";
+import "./InventoryList.scss"; // this file is used for styling on both: InventoryList.js and WarehouseInventoryList.js
 import arrowDrop from "../../assets/icons/sort-24px.svg";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -17,12 +17,12 @@ export const WarehouseInventoryList = ({
   // Alternatively it works either way: in here or in WarehouseDetails, keep one, which is lower possible level. For now it's inside in here, move up if needed
   useEffect(() => {
     axios
-      .get(`${API_URI}/api/warehouses/${warehouseId}/inventories`)
-      .then((res) => {
-        setWarehouseInventoryList(res.data);
-      })
-
-      .catch((err) => console.log(err));
+    .get(`${API_URI}/api/warehouses/${warehouseId}/inventories`)
+    .then((res) => {
+      setWarehouseInventoryList(res.data);
+    })
+    .catch((err) => console.log(err));
+    // eslint-disable-next-line
   }, [API_URI, warehouseId]);
 
   return (
@@ -52,7 +52,6 @@ export const WarehouseInventoryList = ({
             <InventoryCard
               key={item.id}
               item={item}
-              // quantity={quantity} // TODO need to add this field
               setModal={setModal}
               setDeleteItem={setDeleteItem}
             />
