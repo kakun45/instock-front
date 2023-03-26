@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import axios from "axios";
 import { useState } from "react";
@@ -163,7 +163,9 @@ function EditInventory() {
               </div>
             </div>
             <div className="button-wrapper">
-              <Button text="Cancel" emphasis="low-emphasis" type="button" />
+              <Link to="/inventory">
+                <Button text="Cancel" emphasis="low-emphasis" type="button" />
+              </Link>
               <Button text="Edit Item" emphasis="high-emphasis" type="submit" />
             </div>
           </form>
