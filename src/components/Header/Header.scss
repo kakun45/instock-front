@@ -35,30 +35,36 @@
   &__list {
     list-style-type: none;
     margin-top: 0.5rem;
-
+    align-items: center;
     text-align: center;
     color: white;
     display: flex;
     justify-content: center;
     font-size: 0.8rem;
+    @include desktop {
+      align-items: center;
+    }
   }
   &__item-wrapper {
     width: 100%;
     margin: 0 2.5rem 0 2.5rem;
-    width: 100%;
-    border-radius: 0.3rem;
   }
 
   &__item {
     @include m-link($primary-light-color);
+    text-decoration: none;
+    display: block;
   }
   &__item--active {
     background-color: #13182c;
     border: solid 1px;
     border-radius: 20px;
-    width: 170%;
-    height: 2rem;
+    width: 110%;
+    display: block;
     border-color: transparent;
+    @include m-link($primary-light-color);
+    padding: 0.3rem;
+    text-decoration: none;
   }
   &__item:hover {
     text-decoration: underline;

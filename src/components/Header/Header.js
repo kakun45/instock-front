@@ -10,16 +10,28 @@ function Header() {
         <div>
           <ul className="navigation__list">
             <div className="navigation__item-wrapper">
-              <NavLink to="/warehouses">
-                <li className="navigation__item navigation__item--active">
-                  Warehouses
-                </li>
+              <NavLink
+                to="/warehouses"
+                className={({ isActive }) =>
+                  isActive
+                    ? "navigation__item navigation__item--active"
+                    : "navigation__item"
+                }
+              >
+                Warehouses
               </NavLink>
             </div>
 
             <div className="navigation__item-wrapper">
-              <NavLink to="/inventory">
-                <li className="navigation__item">Inventory</li>
+              <NavLink
+                to="/inventory"
+                className={({ isActive }) =>
+                  isActive
+                    ? "navigation__item navigation__item--active"
+                    : "navigation__item"
+                }
+              >
+                Inventory
               </NavLink>
             </div>
           </ul>
