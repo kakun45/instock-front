@@ -60,7 +60,13 @@ function InventoryItemDetails() {
               <h4 className="item-details__table-header item-details__table-header--top">
                 STATUS:
               </h4>
-              <h4 className="item-details__instock-label">
+              <h4
+                className={`item-details__status-label item-details__status-label--${
+                  inventoryItem.status === "In Stock"
+                    ? "in-stock"
+                    : "out-of-stock"
+                }`}
+              >
                 {inventoryItem.status}
               </h4>
             </div>
