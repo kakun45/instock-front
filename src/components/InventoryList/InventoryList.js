@@ -53,15 +53,15 @@ export const InventoryList = ({
             <p className="inventory__header-headers">WAREHOUSE</p>
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
-          <div className="inventory__sort-icon">
+          <div className="inventory__sort-icon--action">
             <p className="inventory__header-headers">ACTIONS</p>
-            <img src={arrowDrop} alt="arrow drop"></img>
+            {/* <img src={arrowDrop} alt="arrow drop"></img> */}
           </div>
 
         </div>
 
       </div>
-      
+
       {inventoryList.map((item) => {
         return (
           <InventoryCard
