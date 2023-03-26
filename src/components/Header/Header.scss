@@ -35,7 +35,7 @@
   &__list {
     list-style-type: none;
     margin-top: 0.5rem;
-
+    align-items: center;
     text-align: center;
     color: white;
     display: flex;
@@ -45,8 +45,6 @@
   &__item-wrapper {
     width: 100%;
     margin: 0 2.5rem 0 2.5rem;
-    width: 100%;
-    border-radius: 0.3rem;
   }
 
   &__item {
@@ -56,8 +54,8 @@
     background-color: #13182c;
     border: solid 1px;
     border-radius: 20px;
-    width: 170%;
-    height: 2rem;
+    width: 140%;
+
     border-color: transparent;
   }
   &__item:hover {
