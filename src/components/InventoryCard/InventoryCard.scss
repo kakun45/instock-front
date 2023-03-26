@@ -19,6 +19,7 @@ button {
 
 .inventory {
   &__product-container {
+
     width: 100%;
     height: 14rem;
     border-bottom: 0.01rem solid #bdc5d5;
@@ -64,13 +65,14 @@ button {
 
   &__table-headers {
     @media (min-width: 768px) {
-      width: 95%;
+
+      width: 100%;
       height: 2rem;
       margin: 0 auto;
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
-      background-color: #f7f8f9df;
+      background-color: rgba(230, 230, 231, 0.64);
     }
 
     &__items {
@@ -129,6 +131,7 @@ button {
   &__item-container--tablet {
     display: none;
     @media (min-width: 768px) {
+
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -143,12 +146,14 @@ button {
   &__product-container--tablet {
     display: none;
     @media (min-width: 768px) {
+
       width: 95%;
       height: 2rem;
       display: inline-block;
       margin-top: 1rem;
       margin-left: 2.5%;
       background-color: rgb(230 230 231 / 64%);
+
     }
   }
 

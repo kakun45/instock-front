@@ -30,9 +30,11 @@ export const InventoryList = ({
   return (
     <>
       <div className="inventory__product-container--tablet">
+
         <div className="inventory__table-headers">
+
           <div className="inventory__sort-icon">
-            <p className="inventory__header-headers">INVENTORY ITEMS</p>{" "}
+            <p className="inventory__header-headers">INVENTORY ITEMS</p>
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
@@ -40,23 +42,26 @@ export const InventoryList = ({
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p className="inventory__header-headers">STATUS</p>{" "}
+            <p className="inventory__header-headers">STATUS</p>
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p className="inventory__header-headers">QTY</p>{" "}
+            <p className="inventory__header-headers">QTY</p>
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p className="inventory__header-headers">WAREHOUSE</p>{" "}
+            <p className="inventory__header-headers">WAREHOUSE</p>
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p className="inventory__header-headers">ACTIONS</p>{" "}
+            <p className="inventory__header-headers">ACTIONS</p>
             <img src={arrowDrop} alt="arrow drop"></img>
           </div>
+
         </div>
+
       </div>
+      
       {inventoryList.map((item) => {
         return (
           <InventoryCard
