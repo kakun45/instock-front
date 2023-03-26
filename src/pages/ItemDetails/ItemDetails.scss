@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.warehouse-page {
+.item-details-page {
   margin-top: 7rem;
 
   @include tablet {
@@ -9,7 +9,7 @@
   }
 }
 
-.warehouse-body {
+.item-details-body {
   background-color: $primary-light-color;
   margin: 0 $m-margin-page-lateral;
   box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);

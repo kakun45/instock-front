@@ -1,6 +1,14 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+.inventory-page {
+  margin-top: 7rem;
+
+  @include tablet {
+    margin-top: 5.625rem;
+  }
+}
+
 .inventory-body {
   background-color: $primary-light-color;
   margin: 0 $m-margin-page-lateral;
