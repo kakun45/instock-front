@@ -7,18 +7,8 @@ import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import arrowDrop from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
-
 export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
-  const {
-    id,
-    warehouse_id,
-    item_name,
-    description,
-    category,
-    status,
-    quantity,
-    warehouse_name,
-  } = item;
+  const { id, item_name, category, status, quantity, warehouse_name } = item;
   return (
     <>
       <div className="inventory__product-container">
@@ -32,8 +22,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               <img
                 className="inventory"
                 src={arrowIcon}
-                alt="chevron arrow icon"
-              ></img>
+                alt="chevron arrow icon"></img>
             </div>
           </div>
           <div className="inventory__catagory">
@@ -45,13 +34,11 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               onClick={() => {
                 setModal(true);
                 setDeleteItem(item);
-              }}
-            >
+              }}>
               <img
                 className="inventory__icons-trash"
                 src={trashcanIcon}
-                alt="trash can icon"
-              ></img>
+                alt="trash can icon"></img>
             </button>
           </div>
         </div>
@@ -84,8 +71,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
-                alt="pencil edit icon"
-              ></img>
+                alt="pencil edit icon"></img>
             </Link>
           </div>
         </div>
@@ -108,28 +94,24 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             }>{`${status}`}</p>
         </div>
         <p>{`${quantity}`}</p>
-        <p>{`${warehouse_name}`}</p>
-        <span className="inventory__icon-container" >
+        {/* WARNING! must be here for use of 2 different pages: Inventory and WarehuoseDetails: */}
+        {warehouse_name ? <p>{warehouse_name}</p> : null}
+        <span className="inventory__icon-container">
           <button
             onClick={() => {
               setModal(true);
               setDeleteItem(item);
-            }}
-          >
+            }}>
             <img
               className="inventory__icons-trash"
               src={trashcanIcon}
-              alt="trash can icon"
-            ></img>
+              alt="trash can icon"></img>
           </button>
           <Link to={`/inventory/${id}/edit`}>
-            {/* <button> */}
-              <img
-                src={editIcon}
-                className="inventory_icons-edit"
-                alt="pencil edit icon"
-              ></img>
-            {/* </button> */}
+            <img
+              src={editIcon}
+              className="inventory_icons-edit"
+              alt="pencil edit icon"></img>
           </Link>
         </span>
       </div>
