@@ -25,29 +25,35 @@ export const InventoryList = ({
       })
 
       .catch((err) => console.log(err));
-  }, [inventoryList.length] );
+  }, [inventoryList.length, inventoryId] );
 
   return (
     <>
       <div className="inventory__product-container--tablet">
         <div className="inventory__table-headers">
           <div className="inventory__sort-icon">
-            <p>INVENTORY ITEMS</p> <img src={arrowDrop} alt="arrow drop"></img>
+            <p className="inventory__header-headers">INVENTORY ITEMS</p>{" "}
+            <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>CATEGORY</p> <img src={arrowDrop} alt="arrow drop"></img>
+            <p className="inventory__header-headers">CATEGORY</p>
+            <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>STATUS</p> <img src={arrowDrop} alt="arrow drop"></img>
+            <p className="inventory__header-headers">STATUS</p>{" "}
+            <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>QTY</p> <img src={arrowDrop} alt="arrow drop"></img>
+            <p className="inventory__header-headers">QTY</p>{" "}
+            <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>WAREHOUSE</p> <img src={arrowDrop} alt="arrow drop"></img>
+            <p className="inventory__header-headers">WAREHOUSE</p>{" "}
+            <img src={arrowDrop} alt="arrow drop"></img>
           </div>
           <div className="inventory__sort-icon">
-            <p>ACTIONS</p> <img src={arrowDrop} alt="arrow drop"></img>
+            <p className="inventory__header-headers">ACTIONS</p>{" "}
+            <img src={arrowDrop} alt="arrow drop"></img>
           </div>
         </div>
       </div>

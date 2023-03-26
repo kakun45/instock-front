@@ -2,22 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .item-details {
-  &__component {
-    background-color: $primary-light-color;
-    margin: 0 $m-margin-page-lateral;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.125rem 0.313rem rgba($primary-dark-color, 10%);
-
-    @include tablet {
-      margin: 0 $t-margin-page-lateral;
-    }
-
-    @include desktop {
-      width: $d-content-width;
-      margin: 0 auto;
-    }
-  }
-
   &__main-content {
     padding: 1.5rem;
 
@@ -30,6 +14,7 @@
   &__left-side {
     @include tablet {
       flex: 1;
+      padding-right: $t-margin-page-lateral;
     }
   }
 
@@ -66,17 +51,31 @@
     }
   }
 
-  &__instock-label {
-    @include m-table-header($accent-positive-color);
-    background-color: rgba($accent-positive-color, 7%);
+  &__status-label {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    margin: 0;
     border-radius: 0.75rem;
 
-    @include tablet {
-      @include t-table-header($accent-positive-color);
+    &--in-stock {
+      @include m-table-header($accent-positive-color);
+      background-color: rgba($accent-positive-color, 7%);
       margin: 0;
+
+      @include tablet {
+        @include t-table-header($accent-positive-color);
+        margin: 0;
+      }
+    }
+
+    &--out-of-stock {
+      @include m-table-header($accent-negative-color);
+      background-color: rgba($accent-negative-color, 7%);
+      margin: 0;
+
+      @include tablet {
+        @include t-table-header($accent-negative-color);
+        margin: 0;
+      }
     }
   }
 

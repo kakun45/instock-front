@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import editIcon from "../../assets/icons/edit-24px.png";
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
@@ -9,6 +9,7 @@ const API_URI = process.env.REACT_APP_API_URI;
 
 function InventoryItemDetails() {
   const { itemId } = useParams();
+  const navigate = useNavigate();
   const [inventoryItem, setinventoryItem] = useState({});
 
   useEffect(() => {
@@ -20,6 +21,8 @@ function InventoryItemDetails() {
       .catch((err) => console.error(err));
   }, [itemId]);
 
+  const handleNavigation = () => navigate(`/inventory/${itemId}/edit`);
+
   return (
     <div className="item-details__component">
       <NavHeader title={inventoryItem.item_name} path="/inventory">
@@ -29,6 +32,7 @@ function InventoryItemDetails() {
           emphasis="high-emphasis"
           type="button"
           mHidden="mHidden"
+          handleOnClick={handleNavigation}
         />
       </NavHeader>
       <div className="item-details__main-content">
@@ -56,7 +60,13 @@ function InventoryItemDetails() {
               <h4 className="item-details__table-header item-details__table-header--top">
                 STATUS:
               </h4>
-              <h4 className="item-details__instock-label">
+              <h4
+                className={`item-details__status-label item-details__status-label--${
+                  inventoryItem.status === "In Stock"
+                    ? "in-stock"
+                    : "out-of-stock"
+                }`}
+              >
                 {inventoryItem.status}
               </h4>
             </div>

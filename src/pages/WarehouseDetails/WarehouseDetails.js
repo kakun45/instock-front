@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import icon from "../../assets/icons/edit-24px.png";
 import Button from "../../components/Button/Button";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
@@ -11,6 +11,7 @@ const API_URI = process.env.REACT_APP_API_URI;
 
 const WarehouseDetails = () => {
   const { warehouseId } = useParams();
+  const navigate = useNavigate();
   const [warehouseObj, setwarehouseObj] = useState({});
 
   const [modal, setModal] = useState(false);
@@ -23,52 +24,70 @@ const WarehouseDetails = () => {
       .get(`${API_URI}/api/warehouses/${warehouseId}`)
       .then((res) => {
         setwarehouseObj(res.data);
-        // Alternatively it works either way: in here or in WarehouseInventoryList, keep one, which is lower possible level. For now it's inside WarehouseInventoryList
-        // axios
-        //   .get(`${API_URI}/api/warehouses/${warehouseId}/inventories`)
-        //   .then((res2) => {
-        //     console.log(res2.data);
-        //     setWarehouseInventoryList(res2.data);
-        //   })
-        //   .catch((err2) => console.error(err2));
       })
       .catch((err) => console.error(err));
   }, [API_URI, warehouseId]);
 
-  const handleOnClick = () => {};
+  const handleNavigation = () => navigate(`/warehouses/${warehouseId}/edit`);
 
   return (
-    <div>
-      <NavHeader
-        title={warehouseObj.warehouse_name} // get it out from a res in State
-        path="/warehouses"
-      >
-        <Button
-          text="Edit"
-          mHidden="mHidden"
-          icon={icon}
-          emphasis="high-emphasis"
-          type="button"
-          handleOnClick={handleOnClick}
-        />
-      </NavHeader>
-
-      {modal ? (
-        <DeleteModal
+    <div className="warehouse-details-page">
+      <div className="warehouse-details-body">
+        <NavHeader
+          title={warehouseObj.warehouse_name} // get it out from a res in State
+          path={"/warehouses"}
+        >
+          <Button
+            text="Edit"
+            mHidden="mHidden"
+            icon={icon}
+            emphasis="high-emphasis"
+            type="button"
+            handleOnClick={handleNavigation}
+          />
+        </NavHeader>
+        <section className="warehouse-info">
+          <div className="warehouse-info__text-box">
+            <h4 className="warehouse-info__table-header">WAREHOUSE ADDRESS:</h4>
+            <p className="warehouse-info__body-text">{`${warehouseObj.address}, ${warehouseObj.city}, ${warehouseObj.country}`}</p>
+          </div>
+          <div className="warehouse-info__contact-info">
+            <div className="warehouse-info__text-box">
+              <h4 className="warehouse-info__table-header">CONTACT NAME:</h4>
+              <p className="warehouse-info__body-text">
+                {warehouseObj.contact_name}
+              </p>
+              <p className="warehouse-info__body-text">
+                {warehouseObj.contact_position}
+              </p>
+            </div>
+            <div className="warehouse-info__text-box">
+              <h4 className="warehouse-info__table-header">
+                CONTACT INFORMATION:
+              </h4>
+              <p className="warehouse-info__body-text">
+                {warehouseObj.contact_phone}
+              </p>
+              <p className="warehouse-info__body-text">
+                {warehouseObj.contact_email}
+              </p>
+            </div>
+          </div>
+        </section>
+        {modal && (
+          <DeleteModal
+            setModal={setModal}
+            deleteItem={deleteItem}
+            setWarehouseInventoryList={setWarehouseInventoryList}
+          />
+        )}
+        <WarehouseInventoryList
           setModal={setModal}
-          deleteItem={deleteItem}
+          setDeleteItem={setDeleteItem}
+          warehouseInventoryList={warehouseInventoryList}
           setWarehouseInventoryList={setWarehouseInventoryList}
         />
-      ) : (
-        ""
-      )}
-
-      <WarehouseInventoryList
-        setModal={setModal}
-        setDeleteItem={setDeleteItem}
-        warehouseInventoryList={warehouseInventoryList}
-        setWarehouseInventoryList={setWarehouseInventoryList}
-      />
+      </div>
     </div>
   );
 };
