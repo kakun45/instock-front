@@ -30,6 +30,7 @@
   &__left-side {
     @include tablet {
       flex: 1;
+      padding-right: $t-margin-page-lateral;
     }
   }
 
