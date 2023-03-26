@@ -1,12 +1,14 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
+import { useParams } from "react-router-dom";
 
 import "./EditWarehouse.scss";
 
 function EditWarehouse() {
+  const { warehouseId } = useParams();
   return (
     <div className="edit-warehouse__component">
-      <NavHeader title="Edit Warehouse" path="/warehouses">
+      <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
         <></>
       </NavHeader>
       <div className="edit-warehouse__main-content">
