@@ -44,8 +44,7 @@ function EditWarehouse() {
     e.preventDefault();
     axios
       .put(`${API_URI}/api/warehouses/${warehouseId}`, formData)
-      .then((res) => {
-        console.log(res.data);
+      .then((_res) => {
         setFormData({});
         navigate(`/warehouses`);
       })
@@ -54,7 +53,7 @@ function EditWarehouse() {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  const { itemId } = useParams();
+
   return (
     <div className="edit-warehouse__component">
       <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
