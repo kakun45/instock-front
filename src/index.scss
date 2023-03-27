@@ -14,3 +14,10 @@ body {
 a {
   text-decoration: none;
 }
+
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
