@@ -11,11 +11,22 @@
 
     @include tablet {
       display: flex;
+      margin-left: 1.5rem;
+    }
+    @include desktop {
+      margin-left: 0;
     }
   }
   &__form-wrapper {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+    @include desktop {
+      width: 120%;
+    }
   }
 
   &__left-side {
@@ -40,7 +51,7 @@
       flex: 1;
       padding-left: $t-margin-page-lateral;
       border-left: 0.063rem solid $secondary-light-color;
-      margin-top: 1rem;
+      width: 40%;
     }
   }
 }
@@ -48,6 +59,12 @@
 .warehouse-form {
   display: flex;
   flex-direction: column;
+  @include tablet {
+    width: 100%;
+  }
+  @include desktop {
+    width: 70%;
+  }
   &__label {
     font-size: 0.813rem;
     font-weight: 600;
