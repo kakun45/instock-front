@@ -130,7 +130,11 @@ function EditWarehouse() {
             <Link to="/inventory">
               <Button text="Cancel" emphasis="low-emphasis" type="button" />
             </Link>
-            <Button text="Save" emphasis="high-emphasis" type="submit" />
+            <Button
+              text="Add Warehouse"
+              emphasis="high-emphasis"
+              type="submit"
+            />
           </div>
         </form>
       </div>

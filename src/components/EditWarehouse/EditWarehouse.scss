@@ -24,6 +24,7 @@
 
     @include tablet {
       display: flex;
+      margin-left: 1.5rem;
     }
   }
   &__form-wrapper {
@@ -32,6 +33,10 @@
     @include tablet {
       display: flex;
       flex-direction: row;
+      width: 130%;
+    }
+    @include desktop {
+      width: 190%;
     }
   }
 
@@ -57,7 +62,6 @@
       flex: 1;
       padding-left: $t-margin-page-lateral;
       border-left: 0.063rem solid $secondary-light-color;
-      margin-top: 1rem;
     }
   }
 }
