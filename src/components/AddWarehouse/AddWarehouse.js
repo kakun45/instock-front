@@ -27,8 +27,6 @@ function EditWarehouse() {
     axios
       .post(`http://localhost:8080/api/warehouses`, formData)
       .then((res) => {
-        console.log(res.data);
-        // setFormData({});
         navigate(`/warehouses`);
       })
       .catch((err) => console.log(err));

@@ -34,11 +34,9 @@ function AddInventory() {
 
   const addInventory = (e) => {
     e.preventDefault();
-    console.log(formData);
     axios
       .post(`http://localhost:8080/api/inventories`, formData)
       .then((res) => {
-        console.log(res.data);
         setFormData({});
         navigate(`/inventory`);
       })
@@ -145,7 +143,6 @@ function AddInventory() {
                 onChange={handleChange}
               >
                 {warehouseData.map((warehouse) => {
-                  console.log(warehouseData);
                   return (
                     <option value={warehouse.id} onChange={handleChange}>
                       {warehouse.warehouse_name}
