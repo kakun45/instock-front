@@ -54,7 +54,6 @@ function EditWarehouse() {
             <div className="edit-warehouse__left-side">
               <h3 className="edit-warehouse__header">Warehouse Details</h3>
 
-
               <label className="warehouse-form__label">Warehouse Name</label>
               <input
                 name="warehouse_name"
@@ -92,7 +91,6 @@ function EditWarehouse() {
             {/* ///RIGHT SIDE//// */}
             <div className="edit-warehouse__right-side">
               <h3 className="edit-warehouse__header">Contact Details</h3>
-
 
               <label className="warehouse-form__label">Contact Name</label>
               <input
