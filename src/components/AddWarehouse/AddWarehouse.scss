@@ -26,10 +26,13 @@
       display: flex;
     }
   }
-  &__form-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
+  // &__form-wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   @include tablet {
+  //     display: flex;
+  //   }
+  // }
 
   &__left-side {
     margin-bottom: 1.5rem;

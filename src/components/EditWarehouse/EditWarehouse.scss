@@ -29,6 +29,10 @@
   &__form-wrapper {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
   }
 
   &__left-side {
