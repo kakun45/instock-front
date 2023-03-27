@@ -11,7 +11,11 @@ import { useNavigate } from "react-router-dom";
 import "./EditWarehouse.scss";
 
 function EditWarehouse() {
+
   const { warehouseId } = useParams();
+<<<<<<< HEAD
+  
+=======
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     warehouse_name: "",
@@ -39,6 +43,7 @@ function EditWarehouse() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   const { itemId } = useParams();
+>>>>>>> develop-front
   return (
     <div className="edit-warehouse__component">
       <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
