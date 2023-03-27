@@ -1,11 +1,18 @@
 import "./Header.scss";
 import inStockLogo from "../../assets/logo/InStock-Logo_1x.png";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header">
-      <img className="navigation__logo" src={inStockLogo} alt="instock-logo" />
+      <Link to="/">
+        <img
+          className="navigation__logo"
+          src={inStockLogo}
+          alt="instock-logo"
+        />
+      </Link>
       <nav className="navigation">
         <div>
           <ul className="navigation__list">
