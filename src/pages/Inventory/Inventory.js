@@ -11,7 +11,7 @@ const Inventory = () => {
   const [inventoryList, setInventoryList] = useState([]);
 
   return (
-    <div className="inventory-page">
+    <main className="inventory-page">
       <div className="inventory-body">
         <SearchBar title="Inventory" path="inventory" />
         {modal && (
@@ -28,7 +28,7 @@ const Inventory = () => {
           setInventoryList={setInventoryList}
         />
       </div>
-    </div>
+    </main>
   );
 };
 

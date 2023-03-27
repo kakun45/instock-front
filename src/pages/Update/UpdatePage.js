@@ -3,9 +3,9 @@ import "./UpdatePage.scss";
 
 function UpdatePage({ children }) {
   return (
-    <div className="update-page">
+    <main className="update-page">
       <div className="update-body">{Children.only(children)}</div>
-    </div>
+    </main>
   );
 }
 

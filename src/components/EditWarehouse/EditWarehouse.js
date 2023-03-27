@@ -1,17 +1,12 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import { Link, useParams } from "react-router-dom";
-
 import axios from "axios";
 import { useState } from "react";
-import { useEffect } from "react";
-import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
-
 import "./EditWarehouse.scss";
 
 function EditWarehouse() {
-
   const { warehouseId } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -24,6 +19,7 @@ function EditWarehouse() {
     contact_phone: "",
     contact_email: "",
   });
+
   const updateWarehouse = (e) => {
     e.preventDefault();
     console.log(formData);
