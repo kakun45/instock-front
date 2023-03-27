@@ -22,7 +22,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               <img
                 className="inventory"
                 src={arrowIcon}
-                alt="chevron arrow icon"></img>
+                alt="chevron arrow icon"
+              ></img>
             </div>
           </div>
           <div className="inventory__catagory">
@@ -34,11 +35,13 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               onClick={() => {
                 setModal(true);
                 setDeleteItem(item);
-              }}>
+              }}
+            >
               <img
                 className="inventory__icons-trash"
                 src={trashcanIcon}
-                alt="trash can icon"></img>
+                alt="trash can icon"
+              ></img>
             </button>
           </div>
         </div>
@@ -52,7 +55,8 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
                   status === "In Stock"
                     ? "inventory__status-text--green"
                     : "inventory__status-text--red"
-                }>{`${status}`}</p>
+                }
+              >{`${status.toUpperCase()}`}</p>
             </div>
           </div>
 
@@ -67,11 +71,12 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
           </div>
 
           <div className="inventory__icons-edit">
-            <Link to={`/${id}/edit`}>
+            <Link to={`/inventory/${id}/edit`}>
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
-                alt="pencil edit icon"></img>
+                alt="pencil edit icon"
+              ></img>
             </Link>
           </div>
         </div>
@@ -91,7 +96,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               status === "In Stock"
                 ? "inventory__status-text--green inventory__status-active-container"
                 : "inventory__status-text--red inventory__status-active-container"
-            }>{`${status}`}</p>
+            }>{`${status.toUpperCase()}`}</p>
         </div>
         <p>{`${quantity}`}</p>
         {/* WARNING! must be here for use of 2 different pages: Inventory and WarehuoseDetails: */}
@@ -101,17 +106,20 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             onClick={() => {
               setModal(true);
               setDeleteItem(item);
-            }}>
+            }}
+          >
             <img
               className="inventory__icons-trash"
               src={trashcanIcon}
-              alt="trash can icon"></img>
+              alt="trash can icon"
+            ></img>
           </button>
           <Link to={`/inventory/${id}/edit`}>
             <img
               src={editIcon}
               className="inventory_icons-edit"
-              alt="pencil edit icon"></img>
+              alt="pencil edit icon"
+            ></img>
           </Link>
         </span>
       </div>
