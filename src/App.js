@@ -15,47 +15,52 @@ import UpdatePage from "./pages/Update/UpdatePage";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Warehouse />} />
-        <Route path="/warehouses" element={<Warehouse />} />
-        <Route
-          path="/warehouses/add"
-          element={
-            <UpdatePage>
-              <AddWarehouse />
-            </UpdatePage>
-          }
-        />
-        <Route path="/warehouses/:warehouseId" element={<WarehouseDetails />} />
-        <Route
-          path="/warehouses/:warehouseId/edit"
-          element={
-            <UpdatePage>
-              <EditWarehouse />
-            </UpdatePage>
-          }
-        />
-        <Route path="/inventory" element={<Inventory />} />
-        <Route
-          path="/inventory/add"
-          element={
-            <UpdatePage>
-              <AddInventory />
-            </UpdatePage>
-          }
-        />
-        <Route path="/inventory/:itemId" element={<ItemDetails />} />
-        <Route
-          path="/inventory/:itemId/edit"
-          element={
-            <UpdatePage>
-              <EditInventory />
-            </UpdatePage>
-          }
-        />
-      </Routes>
-      <Footer />
+      <div className="root">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Warehouse />} />
+          <Route path="/warehouses" element={<Warehouse />} />
+          <Route
+            path="/warehouses/add"
+            element={
+              <UpdatePage>
+                <AddWarehouse />
+              </UpdatePage>
+            }
+          />
+          <Route
+            path="/warehouses/:warehouseId"
+            element={<WarehouseDetails />}
+          />
+          <Route
+            path="/warehouses/:warehouseId/edit"
+            element={
+              <UpdatePage>
+                <EditWarehouse />
+              </UpdatePage>
+            }
+          />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route
+            path="/inventory/add"
+            element={
+              <UpdatePage>
+                <AddInventory />
+              </UpdatePage>
+            }
+          />
+          <Route path="/inventory/:itemId" element={<ItemDetails />} />
+          <Route
+            path="/inventory/:itemId/edit"
+            element={
+              <UpdatePage>
+                <EditInventory />
+              </UpdatePage>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
