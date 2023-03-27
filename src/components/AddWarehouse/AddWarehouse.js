@@ -124,17 +124,18 @@ function EditWarehouse() {
                 onChange={handleChange}
                 className="warehouse-form__input"
               />
+
+              <div className="button-wrapper">
+                <Link to="/inventory">
+                  <Button text="Cancel" emphasis="low-emphasis" type="button" />
+                </Link>
+                <Button
+                  text="Add Warehouse"
+                  emphasis="high-emphasis"
+                  type="submit"
+                />
+              </div>
             </div>
-          </div>
-          <div className="button-wrapper">
-            <Link to="/inventory">
-              <Button text="Cancel" emphasis="low-emphasis" type="button" />
-            </Link>
-            <Button
-              text="Add Warehouse"
-              emphasis="high-emphasis"
-              type="submit"
-            />
           </div>
         </form>
       </div>
