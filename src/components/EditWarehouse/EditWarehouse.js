@@ -53,7 +53,6 @@ function EditWarehouse() {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-
   return (
     <div className="edit-warehouse__component">
       <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
