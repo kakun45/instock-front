@@ -1,0 +1,226 @@
+/** @format */
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+$searchIcon: url("../../assets/icons/search-24px.svg");
+
+.page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: white;
+  border: none;
+}
+
+.inventory {
+  &__product-container {
+
+    width: 90%;
+    height: 14rem;
+    border-bottom: 0.01rem solid #bdc5d5;
+    border-top: 0.01rem solid #bdc5d5;
+    display: flex;
+    margin: 0 auto;
+    background-color: white;
+    padding-top: 1rem;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__item-container {
+    width: 50%;
+    height: 14rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1rem;
+    background-color: white;
+  }
+
+  &__status-container {
+    width: 50%;
+    height: 14rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1rem;
+    background-color: white;
+  }
+//   &__product-container--tablet {
+//     display: none;
+//     @media (min-width: 768px) {
+//       width: 90%;
+//       height: 3rem;
+//       display: inline-block;
+//       margin-top: 1rem;
+//       background-color: rgba(230, 230, 231, 0.64);
+//     }
+//   }
+
+//   &__table-headers {
+//     @media (min-width: 768px) {
+
+//       width: 100%;
+//       height: 2rem;
+//       margin: 0 auto;
+//       display: flex;
+//       align-items: center;
+//       margin-bottom: 1rem;
+//       background-color: rgba(230, 230, 231, 0.64);
+//     }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+    }
+    & > * {
+      flex: 1 1;
+    }
+
+
+//   &__sort-icon {
+//     display: flex;
+//     background-color: rgb(230 230 231 / 64%);
+//   }
+
+  &__item-text {
+    color: blue;
+  }
+
+  &__chevron-container {
+    display: flex;
+  }
+
+  &__chevron:hover {
+    transform: translateX(50%);
+  }
+
+  &__status-text--green {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.75rem;
+    @include m-table-header($accent-positive-color);
+    background-color: rgba($accent-positive-color, 7%);
+    margin: 0;
+
+    @include tablet {
+      @include t-table-header($accent-positive-color);
+      margin: 0;
+    }
+  }
+  &__status-text--red {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.75rem;
+    @include m-table-header($accent-negative-color);
+    background-color: rgba($accent-negative-color, 7%);
+    margin: 0;
+
+    @include tablet {
+      @include t-table-header($accent-negative-color);
+      margin: 0;
+    }
+  }
+
+  &__item-container--tablet {
+    display: none;
+    @media (min-width: 768px) {
+    padding-left: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border-top: 0.01rem solid #bdc5d5;
+      width: 100%;
+      background-color: white;
+      // margin-left: 2.5%;
+    }
+  }
+
+//   &__product-container--tablet {
+//     display: none;
+//     @media (min-width: 768px) {
+
+//       width: 95%;
+//       height: 2rem;
+//       display: inline-block;
+//       margin-top: 1rem;
+//       margin-left: 2.5%;
+//       background-color: rgb(230 230 231 / 64%);
+
+//     }
+//   }
+
+//   &__table-headers {
+//     @media (min-width: 768px) {
+//       display: flex;
+//       justify-content: space-evenly;
+//       margin-bottom: 1rem;
+//       background-color: rgb(230 230 231 / 64%);
+//     }
+//   }
+
+  &__item-container--tablet {
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: white;
+      border-bottom: 0.01rem solid #bdc5d5;
+      padding: 1rem 0;
+    }
+  }
+
+  &__item-container--tablet > * {
+    flex: 1 1;
+  }
+
+  &__items {
+    font-size: 0.75rem;
+  }
+  &__catagory {
+    font-size: 0.75rem;
+  }
+
+  &__status {
+    font-size: 0.75rem;
+  }
+
+  &__quantities {
+    font-size: 0.75rem;
+  }
+
+  &__warehouses {
+    font-size: 0.75rem;
+  }
+
+  &__item-text {
+    @media (min-width: 768px) {
+      margin-left: 1rem;
+    }
+  }
+
+  &__icons-trash {
+    padding-top: 4rem;
+    background-color: white;
+    @media (min-width: 768px) {
+      padding: 0;
+      margin-right: 2rem;
+    }
+  }
+  &__icons-edit {
+    background-color: white;
+    display: flex;
+    justify-content: end;
+    width: 90%;
+    @media (min-width: 768px) {
+      margin-left: 1rem;
+    }
+  }
+}

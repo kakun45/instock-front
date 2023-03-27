@@ -1,22 +1,29 @@
-@use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/_mixins.scss" as *;
 
 .header {
+  @include m-link($primary-light-color);
+  box-sizing: border-box;
+  width: 100%;
   background-color: #232940;
   padding: 1.6rem 1.6rem 0.5rem;
   text-align: center;
+  position: absolute;
+  top: 0;
+  height: 11.625rem;
+  z-index: -1;
   @include tablet {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: start;
+    justify-content: center;
   }
 }
 .navigation {
-  text-align: center;
   &__logo {
-    height: 1.056rem;
-    width: 5.613rem;
-    margin-bottom: 1rem;
+    height: auto;
+    width: auto;
+    object-fit: fill;
+
     @include tablet {
       margin-right: 15rem;
       @include desktop {
@@ -27,23 +34,39 @@
 
   &__list {
     list-style-type: none;
-    text-decoration: none;
+    margin-top: 0.5rem;
+    align-items: center;
     text-align: center;
     color: white;
     display: flex;
     justify-content: center;
     font-size: 0.8rem;
-    margin-right: 1rem;
+    @include desktop {
+      align-items: center;
+    }
   }
   &__item-wrapper {
     width: 100%;
     margin: 0 2.5rem 0 2.5rem;
-    width: 100%;
-    border-radius: 0.3rem;
+  }
 
-    &__item-wrapper:hover {
-      background-color: black;
-      border-radius: 0.3rem;
-    }
+  &__item {
+    @include m-link($primary-light-color);
+    text-decoration: none;
+    display: block;
+  }
+  &__item--active {
+    background-color: #13182c;
+    border: solid 1px;
+    border-radius: 20px;
+    width: 110%;
+    display: block;
+    border-color: transparent;
+    @include m-link($primary-light-color);
+    padding: 0.3rem;
+    text-decoration: none;
+  }
+  &__item:hover {
+    text-decoration: underline;
   }
 }

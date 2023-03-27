@@ -1,7 +1,6 @@
 /** @format */
-
 import React from "react";
-import "../InventoryList/InventoryList.scss";
+import "./InventoryCard.scss";
 import trashcanIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
@@ -9,15 +8,7 @@ import arrowDrop from "../../assets/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
 export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
-  const {
-    id,
-    warehouse_id,
-    item_name,
-    description,
-    category,
-    status,
-    quantity,
-  } = item;
+  const { id, item_name, category, status, quantity, warehouse_name } = item;
   return (
     <>
       <div className="inventory__product-container">
@@ -61,11 +52,11 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             <div className="inventory__status-active-container">
               <p
                 className={
-                  status === "Out of Stock"
-                    ? "out_stock"
-                    : "inventory__status-text"
+                  status === "In Stock"
+                    ? "inventory__status-text--green"
+                    : "inventory__status-text--red"
                 }
-              >{`${status}`}</p>
+              >{`${status.toUpperCase()}`}</p>
             </div>
           </div>
 
@@ -76,11 +67,11 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
 
           <div className="inventory__warehouses">
             <p>WAREHOUSE</p>
-            <p>Manhattan</p>
+            <p>{`${warehouse_name}`}</p>
           </div>
 
-          <div className="inventory__icons">
-            <Link to={`/${id}/edit`}>
+          <div className="inventory__icons-edit">
+            <Link to={`/inventory/${id}/edit`}>
               <img
                 src={editIcon}
                 className="inventory_icons-edit"
@@ -102,15 +93,15 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
         <div>
           <p
             className={
-              status === "Out of Stock"
-                ? "out_stock  inventory__status-active-container"
-                : "inventory__status-text inventory__status-active-container"
-            }
-          >{`${status}`}</p>
+              status === "In Stock"
+                ? "inventory__status-text--green inventory__status-active-container"
+                : "inventory__status-text--red inventory__status-active-container"
+            }>{`${status.toUpperCase()}`}</p>
         </div>
         <p>{`${quantity}`}</p>
-        <p>Manhattan</p>
-        <span>
+        {/* WARNING! must be here for use of 2 different pages: Inventory and WarehuoseDetails: */}
+        {warehouse_name ? <p>{warehouse_name}</p> : null}
+        <span className="inventory__icon-container">
           <button
             onClick={() => {
               setModal(true);
@@ -124,13 +115,11 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
             ></img>
           </button>
           <Link to={`/inventory/${id}/edit`}>
-            <button>
-              <img
-                src={editIcon}
-                className="inventory_icons-edit"
-                alt="pencil edit icon"
-              ></img>
-            </button>
+            <img
+              src={editIcon}
+              className="inventory_icons-edit"
+              alt="pencil edit icon"
+            ></img>
           </Link>
         </span>
       </div>

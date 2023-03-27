@@ -1,26 +1,21 @@
-/** @format */
 import axios from "axios";
 import X from "../../assets/icons/close-24px.svg";
 import Button from "../Button/Button";
 import "./DeleteModal.scss";
 
-const DeleteInventoryModal = ({
+const DeleteWarehouseModal = ({
   setModal,
-  inventoryList,
-  deleteItem,
-  setInventoryList,
+  deleteWarehouse,
+  setWarehouseList,
 }) => {
-  // const nav = useNavigate()
-
-  const deleteInventoryItem = (id) => {
+  const handleDeleteWarehouse = (id) => {
     axios
-      .delete(`http://localhost:8080/api/inventories/${id}`)
-      .then((_res) => {
-        const updatedList = inventoryList.filter((item) => item.id !== id);
-        setInventoryList(updatedList);
-        // nav("/inventory");
+      .delete(`http://localhost:8080/api/warehouses/${deleteWarehouse.id}`)
+      .then((res) => {
         setModal(false);
-        window.location.reload();
+        setWarehouseList((prevState) =>
+          prevState.filter((item) => item.id !== id)
+        );
       })
       .catch((err) => console.log(err));
   };
@@ -38,12 +33,11 @@ const DeleteInventoryModal = ({
             />
           </div>
           <div className="delete-modal__header-container">
-            <h1 className="delete-modal__header">{`Delete ${deleteItem.item_name} Inventory Item`}</h1>
+            <h1 className="delete-modal__header">{`Delete ${deleteWarehouse.warehouse_name} warehouse?`}</h1>
           </div>
           <div className="delete-modal__confirm-container">
             <p className="delete-modal__confrim-text">
-              {`Please confirm that you’d like to delete  ${deleteItem.item_name}  from the inventory
-          list. You won’t be able to undo this action.`}
+              {`Please confirm that you’d like to delete ${deleteWarehouse.warehouse_name} from the list of warehouses. You won’t be able to undo this action.`}
             </p>
           </div>
           <div className="delete-modal__button-container">
@@ -58,8 +52,7 @@ const DeleteInventoryModal = ({
               type="button"
               emphasis="dangerous-emphasis"
               handleOnClick={() => {
-                deleteInventoryItem(deleteItem.id);
-                window.location.reload(false);
+                handleDeleteWarehouse(deleteWarehouse.id);
               }}
             />
           </div>
@@ -69,4 +62,4 @@ const DeleteInventoryModal = ({
   );
 };
 
-export default DeleteInventoryModal;
+export default DeleteWarehouseModal;

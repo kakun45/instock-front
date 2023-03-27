@@ -3,11 +3,13 @@ import React from "react";
 import "./InventoryList.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import arrowDrop from "../../assets/icons/sort-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { InventoryCard } from "../InventoryCard/InventoryCard";
 const API_URI = process.env.REACT_APP_API_URI;
+
 
 export const InventoryList = ({
   setModal,
@@ -25,32 +27,62 @@ export const InventoryList = ({
       })
 
       .catch((err) => console.log(err));
-  }, [inventoryList]);
+  }, [inventoryList.length, inventoryId]);
 
   return (
     <>
-      <div className="inventory__product-container--tablet">
-        <div className="inventory__table-headers">
-          <div className="inventory__sort-icon">
-            <p>INVENTORY ITEMS</p> <img src={arrowDrop} alt="arrow drop"></img>
+      <div className="warehouse-list__component">
+        <div className="warehouse-list__table-row warehouse-list__table-row--t-show">
+          <div className="warehouse-list__header-box warehouse-list__header-box--left">
+            <h4 className="warehouse-list__table-header">
+              INVENTORY ITEM
+              <img
+                src={sortIcon}
+                alt="sort icon"
+                className="warehouse-list__icon"
+              />
+            </h4>
+            <h4 className="warehouse-list__table-header">
+              CATAGORY
+              <img
+                src={sortIcon}
+                alt="sort icon"
+                className="warehouse-list__icon"
+              />
+            </h4>
           </div>
-          <div className="inventory__sort-icon">
-            <p>CATEGORY</p> <img src={arrowDrop} alt="arrow drop"></img>
+          <div className="warehouse-list__header-box warehouse-list__header-box--right">
+            <h4 className="warehouse-list__table-header">
+              STATUS
+              <img
+                src={sortIcon}
+                alt="sort icon"
+                className="warehouse-list__icon"
+              />
+            </h4>
+            <h4 className="warehouse-list__table-header">
+              QTY
+              <img
+                src={sortIcon}
+                alt="sort icon"
+                className="warehouse-list__icon"
+              />
+            </h4>
+            <h4 className="warehouse-list__table-header">
+              WAREHOUSE
+              <img
+                src={sortIcon}
+                alt="sort icon"
+                className="warehouse-list__icon"
+              />
+            </h4>
           </div>
-          <div className="inventory__sort-icon">
-            <p>STATUS</p> <img src={arrowDrop} alt="arrow drop"></img>
-          </div>
-          <div className="inventory__sort-icon">
-            <p>QTY</p> <img src={arrowDrop} alt="arrow drop"></img>
-          </div>
-          <div className="inventory__sort-icon">
-            <p>WAREHOUSE</p> <img src={arrowDrop} alt="arrow drop"></img>
-          </div>
-          <div className="inventory__sort-icon">
-            <p>ACTIONS</p> <img src={arrowDrop} alt="arrow drop"></img>
-          </div>
+          <h4 className="warehouse-list__table-header warehouse-list__table-header--last">
+            ACTION
+          </h4>
         </div>
       </div>
+
       {inventoryList.map((item) => {
         return (
           <InventoryCard

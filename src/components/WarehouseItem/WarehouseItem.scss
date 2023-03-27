@@ -3,7 +3,6 @@
 
 .warehouse-item {
   &__component {
-    background-color: $primary-light-color;
     border-top: 0.063rem solid $secondary-light-color;
     display: flex;
     flex-wrap: wrap;
@@ -18,19 +17,22 @@
   }
 
   &__left-side {
-    flex: 6;
-
-    @include tablet {
-      display: flex;
-    }
-  }
-
-  &__right-side {
-    flex: 6;
+    flex: 1;
 
     @include tablet {
       display: flex;
       align-items: center;
+      flex: 6;
+    }
+  }
+
+  &__right-side {
+    flex: 1;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      flex: 6;
     }
   }
 
@@ -84,18 +86,23 @@
 
     @include desktop {
       width: auto;
+
+      &--address {
+        margin-right: 5rem;
+      }
     }
   }
 
   &__icons-box {
     display: flex;
     justify-content: space-between;
-    flex: 1;
     width: 100%;
 
     @include tablet {
-      width: auto;
+      flex: 1;
+      width: 2rem;
       gap: 1rem;
+      margin-left: 1rem;
     }
   }
 
