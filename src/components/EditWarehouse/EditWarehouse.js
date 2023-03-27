@@ -1,17 +1,13 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import { Link, useParams } from "react-router-dom";
-
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
-import { v4 as uuid } from "uuid";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "./EditWarehouse.scss";
+const API_URI = process.env.REACT_APP_API_URI;
 
 function EditWarehouse() {
-
   const { warehouseId } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -24,13 +20,31 @@ function EditWarehouse() {
     contact_phone: "",
     contact_email: "",
   });
+
+  useEffect(() => {
+    axios
+      .get(`${API_URI}/api/warehouses/${warehouseId}`)
+      .then((res) => {
+        const warehouse = res.data;
+        setFormData({
+          warehouse_name: warehouse.warehouse_name,
+          address: warehouse.address,
+          city: warehouse.city,
+          country: warehouse.country,
+          contact_name: warehouse.contact_name,
+          contact_position: warehouse.contact_position,
+          contact_phone: warehouse.contact_phone,
+          contact_email: warehouse.contact_email,
+        });
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   const updateWarehouse = (e) => {
     e.preventDefault();
-    console.log(formData);
     axios
-      .put(`http://localhost:8080/api/warehouses/${itemId}`, formData)
-      .then((res) => {
-        console.log(res.data);
+      .put(`${API_URI}/api/warehouses/${warehouseId}`, formData)
+      .then((_res) => {
         setFormData({});
         navigate(`/warehouses`);
       })
@@ -39,7 +53,6 @@ function EditWarehouse() {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  const { itemId } = useParams();
   return (
     <div className="edit-warehouse__component">
       <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
@@ -48,7 +61,7 @@ function EditWarehouse() {
       <div className="edit-warehouse__main-content">
         {/* ////LEFT SIDE and top//// */}
         <form onSubmit={updateWarehouse} className="warehouse-form">
-          <div className="edit-warehouse-form__form-wrapper">
+          <div className="edit-warehouse__form-wrapper">
             <div className="edit-warehouse__left-side">
               <h3 className="edit-warehouse__header">Warehouse Details</h3>
 
@@ -84,51 +97,52 @@ function EditWarehouse() {
                 onChange={handleChange}
                 placeholder="USA"
               ></input>
+            </div>
 
-              {/* ///RIGHT SIDE//// */}
-              <div className="edit-warehouse__right-side">
-                <h3 className="edit-warehouse__header">Contact Details</h3>
+            {/* ///RIGHT SIDE//// */}
+            <div className="edit-warehouse__right-side">
+              <h3 className="edit-warehouse__header">Contact Details</h3>
 
-                <label className="warehouse-form__label">Contact Name</label>
-                <input
-                  name="contact_name"
-                  value={formData.contact_name}
-                  placeholder="Contact Name"
-                  onChange={handleChange}
-                  className="warehouse-form__input"
-                />
-                <label className="warehouse-form__label">Position</label>
-                <input
-                  name="contact_position"
-                  value={formData.contact_position}
-                  placeholder="Warehouse Manager"
-                  onChange={handleChange}
-                  className="warehouse-form__input"
-                />
-                <label className="warehouse-form__label">Phone Number</label>
-                <input
-                  name="contact_phone"
-                  value={formData.contact_phone}
-                  placeholder="310-701-1121"
-                  onChange={handleChange}
-                  className="warehouse-form__input"
-                />
-                <label className="warehouse-form__label">Email</label>
-                <input
-                  name="contact_email"
-                  value={formData.contact_email}
-                  placeholder="glyon@instock.com"
-                  onChange={handleChange}
-                  className="warehouse-form__input"
-                />
+              <label className="warehouse-form__label">Contact Name</label>
+              <input
+                name="contact_name"
+                value={formData.contact_name}
+                placeholder="Contact Name"
+                onChange={handleChange}
+                className="warehouse-form__input"
+              />
+              <label className="warehouse-form__label">Position</label>
+              <input
+                name="contact_position"
+                value={formData.contact_position}
+                placeholder="Warehouse Manager"
+                onChange={handleChange}
+                className="warehouse-form__input"
+              />
+              <label className="warehouse-form__label">Phone Number</label>
+              <input
+                name="contact_phone"
+                value={formData.contact_phone}
+                placeholder="310-701-1121"
+                onChange={handleChange}
+                className="warehouse-form__input"
+              />
+              <label className="warehouse-form__label">Email</label>
+              <input
+                name="contact_email"
+                value={formData.contact_email}
+                placeholder="glyon@instock.com"
+                onChange={handleChange}
+                className="warehouse-form__input"
+              />
+
+              <div className="button-wrapper">
+                <Link to={`/warehouses/${warehouseId}`}>
+                  <Button text="Cancel" emphasis="low-emphasis" type="button" />
+                </Link>
+                <Button text="Save" emphasis="high-emphasis" type="submit" />
               </div>
             </div>
-          </div>
-          <div className="button-wrapper">
-            <Link to="/inventory">
-              <Button text="Cancel" emphasis="low-emphasis" type="button" />
-            </Link>
-            <Button text="Save" emphasis="high-emphasis" type="submit" />
           </div>
         </form>
       </div>

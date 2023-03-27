@@ -46,11 +46,6 @@ function WarehouseList({ warehouseList, setModal, setDeleteWarehouse }) {
         </div>
         <h4 className="warehouse-list__table-header warehouse-list__table-header--last">
           ACTION
-          <img
-            src={sortIcon}
-            alt="sort icon"
-            className="warehouse-list__icon"
-          />
         </h4>
       </div>
       {warehouseList &&

@@ -31,11 +31,12 @@ const WarehouseDetails = () => {
   const handleNavigation = () => navigate(`/warehouses/${warehouseId}/edit`);
 
   return (
-    <div className="warehouse-details-page">
+    <main className="warehouse-details-page">
       <div className="warehouse-details-body">
         <NavHeader
           title={warehouseObj.warehouse_name} // get it out from a res in State
-          path={"/warehouses"}>
+          path={"/warehouses"}
+        >
           <Button
             text="Edit"
             mHidden="mHidden"
@@ -87,7 +88,7 @@ const WarehouseDetails = () => {
           setWarehouseInventoryList={setWarehouseInventoryList}
         />
       </div>
-    </div>
+    </main>
   );
 };
 

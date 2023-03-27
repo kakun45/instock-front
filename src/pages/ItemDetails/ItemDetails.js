@@ -3,11 +3,11 @@ import "./ItemDetails.scss";
 
 function ItemDetails() {
   return (
-    <div className="item-details-page">
+    <main className="item-details-page">
       <div className="item-details-body">
         <InventoryItemDetails />
       </div>
-    </div>
+    </main>
   );
 }
 
