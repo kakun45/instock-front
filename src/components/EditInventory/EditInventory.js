@@ -38,7 +38,6 @@ function EditInventory() {
     axios
       .put(`http://localhost:8080/api/inventories/${itemId}`, formData)
       .then((res) => {
-        console.log(res.data);
         setFormData({});
         navigate(`/inventory`);
       })
