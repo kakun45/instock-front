@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom";
 import "./EditWarehouse.scss";
 
 function EditWarehouse() {
+
   const { warehouseId } = useParams();
+  
   return (
     <div className="edit-warehouse__component">
       <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
