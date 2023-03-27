@@ -35,8 +35,7 @@ const WarehouseDetails = () => {
       <div className="warehouse-details-body">
         <NavHeader
           title={warehouseObj.warehouse_name} // get it out from a res in State
-          path={"/warehouses"}
-        >
+          path={"/warehouses"}>
           <Button
             text="Edit"
             mHidden="mHidden"
