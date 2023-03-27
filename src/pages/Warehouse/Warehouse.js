@@ -20,7 +20,7 @@ const Warehouse = () => {
   }, []);
 
   return (
-    <div className="warehouse-page">
+    <main className="warehouse-page">
       <div className="warehouse-body">
         {modal && (
           <DeleteWarehouseModal
@@ -35,7 +35,7 @@ const Warehouse = () => {
           setDeleteWarehouse={setDeleteWarehouse}
         />
       </div>
-    </div>
+    </main>
   );
 };
 
