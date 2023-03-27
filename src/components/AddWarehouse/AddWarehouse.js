@@ -126,7 +126,7 @@ function EditWarehouse() {
               />
 
               <div className="button-wrapper">
-                <Link to="/inventory">
+                <Link to="/warehouses">
                   <Button text="Cancel" emphasis="low-emphasis" type="button" />
                 </Link>
                 <Button
