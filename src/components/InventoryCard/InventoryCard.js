@@ -56,7 +56,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
                     ? "inventory__status-text--green"
                     : "inventory__status-text--red"
                 }
-              >{`${status}`}</p>
+              >{`${status.toUpperCase()}`}</p>
             </div>
           </div>
 
@@ -96,8 +96,7 @@ export const InventoryCard = ({ item, setModal, setDeleteItem }) => {
               status === "In Stock"
                 ? "inventory__status-text--green inventory__status-active-container"
                 : "inventory__status-text--red inventory__status-active-container"
-            }
-          >{`${status}`}</p>
+            }>{`${status.toUpperCase()}`}</p>
         </div>
         <p>{`${quantity}`}</p>
         {/* WARNING! must be here for use of 2 different pages: Inventory and WarehuoseDetails: */}

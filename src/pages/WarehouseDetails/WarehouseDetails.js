@@ -31,7 +31,7 @@ const WarehouseDetails = () => {
   const handleNavigation = () => navigate(`/warehouses/${warehouseId}/edit`);
 
   return (
-    <div className="warehouse-details-page">
+    <main className="warehouse-details-page">
       <div className="warehouse-details-body">
         <NavHeader
           title={warehouseObj.warehouse_name} // get it out from a res in State
@@ -88,7 +88,7 @@ const WarehouseDetails = () => {
           setWarehouseInventoryList={setWarehouseInventoryList}
         />
       </div>
-    </div>
+    </main>
   );
 };
 

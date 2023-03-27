@@ -12,6 +12,8 @@ import "./EditInventory.scss";
 import "../AddInventory/AddInventory.scss";
 
 function EditInventory() {
+
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     item_name: "",
@@ -47,7 +49,9 @@ function EditInventory() {
       })
       .catch((err) => console.log(err));
   };
+
   const { itemId } = useParams();
+
   return (
     <div className="edit-inventory__component">
       <NavHeader title="Edit Inventory Item" path={`/inventory/${itemId}`}>

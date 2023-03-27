@@ -43,16 +43,17 @@ function EditWarehouse() {
   };
   const { itemId } = useParams();
   return (
-    <div className="edit-warehouse__component">
-      <NavHeader title="Add New Warehouse" path={`/warehouses/${warehouseId}`}>
+    <div className="add-warehouse__component">
+      <NavHeader title="Add New Warehouse" path={`/warehouses`}>
         <></>
       </NavHeader>
-      <div className="edit-warehouse__main-content">
+      <div className="add-warehouse__main-content">
         {/* ////LEFT SIDE and top//// */}
         <form onSubmit={addWarehouse} className="warehouse-form">
           <div className="edit-warehouse__form-wrapper">
             <div className="edit-warehouse__left-side">
               <h3 className="edit-warehouse__header">Warehouse Details</h3>
+
 
               <label className="warehouse-form__label">Warehouse Name</label>
               <input
@@ -91,6 +92,7 @@ function EditWarehouse() {
             {/* ///RIGHT SIDE//// */}
             <div className="edit-warehouse__right-side">
               <h3 className="edit-warehouse__header">Contact Details</h3>
+
 
               <label className="warehouse-form__label">Contact Name</label>
               <input

@@ -1,14 +1,11 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
 import { Link, useParams } from "react-router-dom";
-
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
-import { v4 as uuid } from "uuid";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "./EditWarehouse.scss";
+const API_URI = process.env.REACT_APP_API_URI;
 
 function EditWarehouse() {
   const { warehouseId } = useParams();
@@ -23,13 +20,31 @@ function EditWarehouse() {
     contact_phone: "",
     contact_email: "",
   });
+
+  useEffect(() => {
+    axios
+      .get(`${API_URI}/api/warehouses/${warehouseId}`)
+      .then((res) => {
+        const warehouse = res.data;
+        setFormData({
+          warehouse_name: warehouse.warehouse_name,
+          address: warehouse.address,
+          city: warehouse.city,
+          country: warehouse.country,
+          contact_name: warehouse.contact_name,
+          contact_position: warehouse.contact_position,
+          contact_phone: warehouse.contact_phone,
+          contact_email: warehouse.contact_email,
+        });
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   const updateWarehouse = (e) => {
     e.preventDefault();
-    console.log(formData);
     axios
-      .put(`http://localhost:8080/api/warehouses/${itemId}`, formData)
-      .then((res) => {
-        console.log(res.data);
+      .put(`${API_URI}/api/warehouses/${warehouseId}`, formData)
+      .then((_res) => {
         setFormData({});
         navigate(`/warehouses`);
       })
@@ -38,7 +53,7 @@ function EditWarehouse() {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  const { itemId } = useParams();
+
   return (
     <div className="edit-warehouse__component">
       <NavHeader title="Edit Warehouse" path={`/warehouses/${warehouseId}`}>
