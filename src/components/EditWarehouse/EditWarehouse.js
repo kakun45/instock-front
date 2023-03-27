@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -137,9 +137,12 @@ function EditWarehouse() {
               />
 
               <div className="button-wrapper">
-                <Link to={`/warehouses/${warehouseId}`}>
-                  <Button text="Cancel" emphasis="low-emphasis" type="button" />
-                </Link>
+                <Button
+                  text="Cancel"
+                  emphasis="low-emphasis"
+                  type="button"
+                  handleOnClick={() => navigate(`/warehouses/${warehouseId}`)}
+                />
                 <Button text="Save" emphasis="high-emphasis" type="submit" />
               </div>
             </div>

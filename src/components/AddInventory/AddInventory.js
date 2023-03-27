@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 function AddInventory() {
   const navigate = useNavigate();
 
-  const id = uuid();
   const [formData, setFormData] = useState({
     item_name: "",
     description: "",
@@ -30,7 +29,6 @@ function AddInventory() {
   }, []);
 
   const handleChange = (event) => {
-    // console.dir(event.target);
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
@@ -158,7 +156,12 @@ function AddInventory() {
             </div>
           </div>
           <div className="button-wrapper">
-            <Button text="Cancel" emphasis="low-emphasis" type="button" />
+            <Button
+              text="Cancel"
+              emphasis="low-emphasis"
+              type="button"
+              handleOnClick={() => navigate("/inventory")}
+            />
             <Button text="Add Item" emphasis="high-emphasis" type="submit" />
           </div>
         </form>

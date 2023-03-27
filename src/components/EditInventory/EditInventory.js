@@ -1,19 +1,15 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
-import { Link, useParams } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 import "./EditInventory.scss";
 import "../AddInventory/AddInventory.scss";
 
 function EditInventory() {
-
-
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     item_name: "",
@@ -39,7 +35,6 @@ function EditInventory() {
 
   const updateInventory = (e) => {
     e.preventDefault();
-    console.log(formData);
     axios
       .put(`http://localhost:8080/api/inventories/${itemId}`, formData)
       .then((res) => {
@@ -167,9 +162,12 @@ function EditInventory() {
               </div>
             </div>
             <div className="button-wrapper">
-              <Link to="/inventory">
-                <Button text="Cancel" emphasis="low-emphasis" type="button" />
-              </Link>
+              <Button
+                text="Cancel"
+                emphasis="low-emphasis"
+                type="button"
+                handleOnClick={() => navigate(`/inventory/${itemId}`)}
+              />
               <Button text="Edit Item" emphasis="high-emphasis" type="submit" />
             </div>
           </form>

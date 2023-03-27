@@ -1,10 +1,7 @@
 import Button from "../Button/Button";
 import NavHeader from "../NavHeader/NavHeader";
-import { Link, useParams } from "react-router-dom";
-import { v4 as UUID } from "uuid";
 import axios from "axios";
 import { useState } from "react";
-import { useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +10,6 @@ import "../AddWarehouse/AddWarehouse.scss";
 
 function EditWarehouse() {
   const id = uuid();
-  const { warehouseId } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     id: id,
@@ -28,7 +24,6 @@ function EditWarehouse() {
   });
   const addWarehouse = (e) => {
     e.preventDefault();
-    console.log(formData);
     axios
       .post(`http://localhost:8080/api/warehouses`, formData)
       .then((res) => {
@@ -41,7 +36,7 @@ function EditWarehouse() {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-  const { itemId } = useParams();
+
   return (
     <div className="add-warehouse__component">
       <NavHeader title="Add New Warehouse" path={`/warehouses`}>
@@ -126,9 +121,12 @@ function EditWarehouse() {
               />
 
               <div className="button-wrapper">
-                <Link to="/warehouses">
-                  <Button text="Cancel" emphasis="low-emphasis" type="button" />
-                </Link>
+                <Button
+                  text="Cancel"
+                  emphasis="low-emphasis"
+                  type="button"
+                  handleOnClick={() => navigate("/warehouses")}
+                />
                 <Button
                   text="Add Warehouse"
                   emphasis="high-emphasis"
