@@ -17,11 +17,11 @@ export const WarehouseInventoryList = ({
   // Alternatively it works either way: in here or in WarehouseDetails, keep one, which is lower possible level. For now it's inside in here, move up if needed
   useEffect(() => {
     axios
-    .get(`${API_URI}/api/warehouses/${warehouseId}/inventories`)
-    .then((res) => {
-      setWarehouseInventoryList(res.data);
-    })
-    .catch((err) => console.log(err));
+      .get(`${API_URI}/api/warehouses/${warehouseId}/inventories`)
+      .then((res) => {
+        setWarehouseInventoryList(res.data);
+      })
+      .catch((err) => console.log(err));
     // eslint-disable-next-line
   }, [API_URI, warehouseId]);
 
@@ -48,14 +48,17 @@ export const WarehouseInventoryList = ({
       </div>
       {warehouseInventoryList &&
         warehouseInventoryList.map((item) => {
-          return (
-            <InventoryCard
-              key={item.id}
-              item={item}
-              setModal={setModal}
-              setDeleteItem={setDeleteItem}
-            />
-          );
+          // WARNING! Check must be here in case of empty Inventoriest on a legit Warehouse!
+          if (item.id) {
+            return (
+              <InventoryCard
+                key={item.id}
+                item={item}
+                setModal={setModal}
+                setDeleteItem={setDeleteItem}
+              />
+            );
+          }
         })}
     </>
   );
