@@ -8,7 +8,8 @@ Used:
 - BEM/SASS/npm
 - Relational database
 - Postman
-
+  
+We developed and produced original, visual elements and user interfaces across devices of full digital experiences of a Stocking system. The following screenshots are for a desktop, but the implementation includes tablet and mobile, which screenshots are not posted in this Readme.
 _____________
 Warehouses Interface
 ![Warehouses List_Instock](https://github.com/kakun45/instock-front/assets/53381916/2b2cd36d-1ec1-4919-ba1a-a26a5c5eda1a)
